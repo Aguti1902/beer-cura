@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-gray-800 bg-warm-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-honey-600 hover:bg-honey-700 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-white hover:bg-honey-50 text-honey-700 border-2 border-honey-600 font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-800 leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-500 mt-3 max-w-2xl;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-warm-100 p-6 hover:shadow-md transition-shadow duration-300;
+  }
+
+  .disclaimer {
+    @apply text-xs text-gray-400 italic border-l-2 border-honey-300 pl-3 py-1;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-honey-600 to-amber-500 bg-clip-text text-transparent;
+  }
+}

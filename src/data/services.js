@@ -1,0 +1,73 @@
+export const services = [
+  {
+    id: 'aire-colmena',
+    title: 'Aire de Colmena',
+    shortDesc: 'Terapia respiratoria con dispositivo medical Beecura. Inhala el microambiente natural de la colmena.',
+    icon: '🍯',
+    color: 'honey',
+    href: '/aire-de-colmena',
+    benefits: ['Apoyo al sistema respiratorio', 'Ambiente rico en propóleo aerosol', 'Sesiones relajantes y guiadas'],
+  },
+  {
+    id: 'apiterapia',
+    title: 'Apiterapia y Apipuntura',
+    shortDesc: 'Uso terapéutico de los productos de la colmena: miel, propóleo, jalea real, veneno de abeja y más.',
+    icon: '🐝',
+    color: 'amber',
+    href: '/apiterapia',
+    benefits: ['Miel, propóleo y jalea real', 'Apipuntura con valoración previa', 'Protocolo individualizado'],
+  },
+  {
+    id: 'control-peso',
+    title: 'Control de Peso y Péptidos',
+    shortDesc: 'Abordaje integral del peso con péptidos bioactivos, regulación del cortisol y GLP naturales.',
+    icon: '🌿',
+    color: 'olive',
+    href: '/control-de-peso',
+    benefits: ['Péptidos bioactivos GLP-1/2/GIP', 'Regulación del cortisol', 'Sin dietas extremas'],
+  },
+  {
+    id: 'enfermeria',
+    title: 'Enfermería a Domicilio',
+    shortDesc: 'Atención de enfermería en tu hogar en Valladolid. Curas, inyectables, constantes y seguimiento.',
+    icon: '🏠',
+    color: 'warm',
+    href: '/enfermeria-domicilio-valladolid',
+    benefits: ['Enfermero titulado', 'Atención en Valladolid', 'Coordinación familiar'],
+  },
+  {
+    id: 'taller-escuela',
+    title: 'Taller Escuela',
+    shortDesc: 'Formación en medicina tradicional, apiterapia y bienestar natural. Seminarios y talleres prácticos.',
+    icon: '📚',
+    color: 'olive',
+    href: '/taller-escuela',
+    benefits: ['Medicina tradicional y natural', 'Talleres prácticos', 'Para profesionales y particulares'],
+  },
+]
+
+export const beecuraCenters = [
+  {
+    id: 'tordesillas',
+    name: 'Beecura Tordesillas',
+    location: 'Tordesillas, Valladolid',
+    description: 'Centro principal dirigido por el Prof. Dr. Bernardo J. Acosta. Terapias naturales avanzadas con dispositivo medical Beecura.',
+    phone: ['+52 55 6445 2737', '+52 55 4732 5430'],
+    email: 'bermato2004@yahoo.com',
+    featured: true,
+  },
+  {
+    id: 'asturias',
+    name: 'Beecura Aires del Truébanu',
+    location: 'Asturias',
+    description: 'Centro Beecura en el corazón de Asturias, rodeado de naturaleza y con tratamientos de aire de colmena.',
+    featured: false,
+  },
+  {
+    id: 'madrid',
+    name: 'Beecura Taller de las Tradiciones',
+    location: 'Valdemanco, Madrid',
+    description: 'Espacio Beecura en Valdemanco, Madrid, dedicado a la terapia con aire de colmena y tradiciones naturales.',
+    featured: false,
+  },
+]

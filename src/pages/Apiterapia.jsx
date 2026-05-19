@@ -1,0 +1,217 @@
+import { Helmet } from 'react-helmet-async'
+import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
+import SectionTitle from '../components/SectionTitle'
+import FAQ from '../components/FAQ'
+import LegalDisclaimer from '../components/LegalDisclaimer'
+import { faqsApiterapia } from '../data/faqs'
+
+const products = [
+  {
+    emoji: '🍯',
+    name: 'Miel terapéutica',
+    desc: 'La miel es uno de los productos más completos de la colmena. Rica en enzimas, antioxidantes y compuestos naturales, puede apoyar el bienestar digestivo y general.',
+  },
+  {
+    emoji: '🟤',
+    name: 'Propóleo',
+    desc: 'Resina natural recolectada por las abejas con una composición rica en flavonoides y compuestos bioactivos. Puede contribuir a apoyar las defensas naturales del organismo.',
+  },
+  {
+    emoji: '👑',
+    name: 'Jalea Real',
+    desc: 'Sustancia exclusiva producida por las abejas obreras. Rica en aminoácidos, vitaminas del grupo B y ácidos grasos únicos. Muy valorada en bienestar energético y vitalidad.',
+  },
+  {
+    emoji: '🌼',
+    name: 'Polen',
+    desc: 'El polen de abeja es una fuente concentrada de proteínas, vitaminas y minerales. Puede favorecer el aporte nutricional complementario.',
+  },
+  {
+    emoji: '💧',
+    name: 'Veneno de abeja (Apitoxina)',
+    desc: 'La apitoxina contiene péptidos y enzimas de interés científico. Su uso terapéutico requiere valoración estricta previa. Solo bajo supervisión del Dr. Acosta.',
+  },
+  {
+    emoji: '🕯️',
+    name: 'Cera de abeja',
+    desc: 'Utilizada en preparados y aplicaciones externas. La cera de abeja posee propiedades naturales interesantes para la piel y el bienestar externo.',
+  },
+]
+
+export default function Apiterapia() {
+  return (
+    <>
+      <Helmet>
+        <title>Apiterapia y Apipuntura · Productos de la Colmena · Tordesillas</title>
+        <meta name="description" content="Apiterapia con productos de la colmena: miel, propóleo, jalea real, polen y veneno de abeja. Apipuntura con valoración previa. Dr. Bernardo J. Acosta, Tordesillas." />
+        <meta name="keywords" content="apiterapia, apipuntura, veneno de abeja, propóleo, jalea real, miel terapéutica, terapia natural Valladolid, apitoxina" />
+      </Helmet>
+
+      {/* HERO */}
+      <section className="relative py-24 bg-gradient-to-br from-amber-50 to-honey-50 overflow-hidden">
+        <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <span className="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-semibold px-4 py-1.5 rounded-full mb-6 border border-amber-200">
+              🐝 Apiterapia y Apipuntura
+            </span>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-5">
+              El poder terapéutico de{' '}
+              <span className="text-gradient">la colmena</span>
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
+              Uso de las abejas y los productos de la colmena para favorecer el bienestar, las defensas naturales
+              y el buen estado de forma. Siempre bajo valoración y acompañamiento profesional.
+            </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <Link to="/contacto" className="btn-primary text-base px-8 py-4">
+                Solicitar valoración
+              </Link>
+              <a
+                href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20apiterapia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp text-base px-8 py-4"
+              >
+                💬 WhatsApp
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* INTRO */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <SectionTitle
+              eyebrow="Qué es la apiterapia"
+              title="La medicina de la abeja"
+              subtitle="La apiterapia engloba el conjunto de prácticas terapéuticas basadas en el uso de los productos de la colmena. Una tradición milenaria respaldada por el interés científico contemporáneo."
+              centered
+            />
+          </div>
+          <div className="bg-honey-50 rounded-3xl p-8 border border-honey-200">
+            <p className="text-gray-700 leading-relaxed text-center text-lg">
+              En nuestro centro, la apiterapia se aplica bajo la supervisión del{' '}
+              <strong>Prof. MSc. Dr. Bernardo J. Acosta</strong>, especialista en Medicina Tradicional y Natural,
+              con protocolo individualizado para cada persona.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* PRODUCTOS */}
+      <section className="py-20 bg-warm-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <SectionTitle
+            eyebrow="Productos de la colmena"
+            title="Los seis tesoros de la abeja"
+            subtitle="Cada producto de la colmena tiene una composición única y un potencial terapéutico propio."
+            centered
+          />
+          <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {products.map((product, i) => (
+              <motion.div
+                key={product.name}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1, duration: 0.5 }}
+                className="card"
+              >
+                <div className="text-4xl mb-4">{product.emoji}</div>
+                <h3 className="font-bold text-gray-800 text-lg mb-2">{product.name}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{product.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <LegalDisclaimer className="max-w-2xl" />
+          </div>
+        </div>
+      </section>
+
+      {/* APIPUNTURA */}
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionTitle
+                eyebrow="Técnica avanzada"
+                title="Apipuntura"
+                subtitle="Aplicación controlada del veneno de abeja en puntos específicos del cuerpo, similar a la acupuntura."
+              />
+              <p className="mt-6 text-gray-600 leading-relaxed mb-6">
+                La apipuntura es una técnica especializada dentro de la apiterapia que consiste en la aplicación
+                controlada y dosificada de <strong className="text-gray-800">apitoxina (veneno de abeja)</strong> en puntos específicos del cuerpo,
+                con un enfoque similar al de la acupuntura tradicional china.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-6">
+                Requiere una valoración previa exhaustiva y se realiza exclusivamente bajo la supervisión
+                del Dr. Acosta, con los protocolos de seguridad adecuados.
+              </p>
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start gap-3">
+                <AlertTriangle size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-amber-800 text-sm mb-1">Aviso de seguridad importante</p>
+                  <p className="text-sm text-amber-700 leading-relaxed">
+                    La apipuntura y el uso de apitoxina <strong>no se realizan en personas con alergia conocida al veneno de abeja</strong>,
+                    ni sin valoración profesional previa obligatoria. Es imprescindible informar sobre cualquier alergia conocida.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div className="bg-gradient-to-br from-honey-100 to-amber-50 rounded-3xl p-8 text-center border border-honey-200">
+                <div className="text-6xl mb-4">💉</div>
+                <h3 className="font-bold text-xl text-gray-800 mb-2">Apipuntura</h3>
+                <p className="text-sm text-gray-600">Protocolo controlado · Valoración previa · Supervisión continua</p>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { check: 'Valoración previa obligatoria' },
+                  { check: 'Protocolo individualizado' },
+                  { check: 'Dosis controlada' },
+                  { check: 'Supervisión médica' },
+                ].map(({ check }) => (
+                  <div key={check} className="flex items-start gap-2 bg-white rounded-xl p-3 border border-warm-100 shadow-sm">
+                    <CheckCircle size={14} className="text-green-500 flex-shrink-0 mt-0.5" />
+                    <span className="text-xs text-gray-700 font-medium">{check}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <FAQ faqs={faqsApiterapia} title="Preguntas sobre Apiterapia" />
+
+      {/* CTA */}
+      <section className="py-20 bg-gradient-to-r from-amber-600 to-honey-600">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">¿Quieres saber si la apiterapia es para ti?</h2>
+          <p className="text-amber-100 mb-8">Solicita una valoración personalizada con el Dr. Acosta. Sin compromiso.</p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
+              Solicitar valoración <ArrowRight size={16} />
+            </Link>
+            <a
+              href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20apiterapia"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
+            >
+              💬 WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
