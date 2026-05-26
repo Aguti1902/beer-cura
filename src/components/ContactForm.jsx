@@ -3,11 +3,10 @@ import { motion } from 'framer-motion'
 import { Send, CheckCircle } from 'lucide-react'
 
 const services = [
-  'Terapia Aire de Colmena',
+  'Beecura — Aire de Colmena',
   'Apiterapia / Apipuntura',
   'Control de Peso y Péptidos Bioactivos',
-  'Enfermería a Domicilio',
-  'Taller Escuela / Formación',
+  "Vegg's Valladolid (colaborador)",
   'Otro / Consulta general',
 ]
 

@@ -18,7 +18,7 @@ export default function Privacidad() {
               <section>
                 <h2 className="text-xl font-bold text-gray-800 mb-3">1. Responsable del tratamiento</h2>
                 <ul className="list-disc list-inside space-y-1">
-                  <li><strong>Responsable:</strong> Prof. MSc. Dr. Bernardo Julián Acosta Martínez</li>
+                  <li><strong>Responsable:</strong> Ramón Regalado Rico (Beecura Tordesillas)</li>
                   <li><strong>Denominación:</strong> Beecura Tordesillas</li>
                   <li><strong>Email:</strong> bermato2004@yahoo.com</li>
                 </ul>

@@ -5,9 +5,8 @@ import Home from './pages/Home'
 import AireColmena from './pages/AireColmena'
 import Apiterapia from './pages/Apiterapia'
 import ControlPeso from './pages/ControlPeso'
-import Enfermeria from './pages/Enfermeria'
-import TallerEscuela from './pages/TallerEscuela'
 import BeecuraEspana from './pages/BeecuraEspana'
+import Veggs from './pages/Veggs'
 import Opiniones from './pages/Opiniones'
 import Contacto from './pages/Contacto'
 import AvisoLegal from './pages/AvisoLegal'
@@ -31,9 +30,8 @@ function AppRoutes() {
           <Route path="/aire-de-colmena" element={<AireColmena />} />
           <Route path="/apiterapia" element={<Apiterapia />} />
           <Route path="/control-de-peso" element={<ControlPeso />} />
-          <Route path="/enfermeria-domicilio-valladolid" element={<Enfermeria />} />
-          <Route path="/taller-escuela" element={<TallerEscuela />} />
           <Route path="/beecura-espana" element={<BeecuraEspana />} />
+          <Route path="/veggs-valladolid" element={<Veggs />} />
           <Route path="/opiniones" element={<Opiniones />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />

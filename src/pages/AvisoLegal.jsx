@@ -21,7 +21,7 @@ export default function AvisoLegal() {
                   En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), se facilitan los siguientes datos:
                 </p>
                 <ul className="list-disc list-inside space-y-1 mt-3">
-                  <li><strong>Titular:</strong> Prof. MSc. Dr. Bernardo Julián Acosta Martínez</li>
+                  <li><strong>Titular:</strong> Ramón Regalado Rico (Beecura Tordesillas)</li>
                   <li><strong>Denominación:</strong> Beecura Tordesillas</li>
                   <li><strong>Localización:</strong> Tordesillas, Valladolid, España</li>
                   <li><strong>Correo electrónico:</strong> bermato2004@yahoo.com</li>

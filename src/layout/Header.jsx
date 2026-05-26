@@ -6,16 +6,16 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navLinks = [
   { label: 'Inicio', href: '/' },
   {
-    label: 'Terapias', href: '#',
+    label: 'Terapias',
+    href: '#',
     children: [
       { label: 'Aire de Colmena', href: '/aire-de-colmena' },
       { label: 'Apiterapia y Apipuntura', href: '/apiterapia' },
       { label: 'Control de Peso', href: '/control-de-peso' },
     ],
   },
-  { label: 'Enfermería Domicilio', href: '/enfermeria-domicilio-valladolid' },
-  { label: 'Formación', href: '/taller-escuela' },
-  { label: 'Beecura España', href: '/beecura-espana' },
+  { label: "Vegg's Valladolid", href: '/veggs-valladolid' },
+  { label: 'Beecura Europa', href: '/beecura-espana' },
   { label: 'Opiniones', href: '/opiniones' },
   { label: 'Contacto', href: '/contacto' },
 ]
@@ -45,7 +45,6 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <span className="text-2xl">🐝</span>
             <div>
@@ -54,7 +53,6 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) =>
               link.children ? (
@@ -103,23 +101,21 @@ export default function Header() {
             )}
           </nav>
 
-          {/* CTA Desktop */}
           <div className="hidden lg:flex items-center gap-3">
             <a href="tel:+525564452737" className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-honey-700 transition-colors">
               <Phone size={14} />
               <span className="font-medium">Llamar</span>
             </a>
             <a
-              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20consulta"
+              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20Beecura%20Aire%20de%20Colmena"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm py-2.5 px-5"
             >
-              Reservar consulta
+              Reservar sesión
             </a>
           </div>
 
-          {/* Mobile menu toggle */}
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden p-2 rounded-xl text-gray-700 hover:bg-honey-50 transition-colors"
@@ -130,7 +126,6 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -177,12 +172,12 @@ export default function Header() {
               )}
               <div className="pt-3 border-t border-warm-100 flex flex-col gap-2">
                 <a
-                  href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20consulta"
+                  href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20Beecura%20Aire%20de%20Colmena"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-sm justify-center"
                 >
-                  Reservar consulta
+                  Reservar sesión
                 </a>
               </div>
             </nav>

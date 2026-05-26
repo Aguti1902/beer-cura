@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, TrendingUp, Brain, Moon, Zap } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
+import DrAcostaProgramDirector from '../components/DrAcostaProgramDirector'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsControlPeso } from '../data/faqs'
+import { drAcosta } from '../data/siteConfig'
 
 const cortisolEffects = [
   { icon: Brain, label: 'Niebla mental y dificultad de concentración' },
@@ -59,9 +61,9 @@ export default function ControlPeso() {
   return (
     <>
       <Helmet>
-        <title>Control de Peso Natural y Péptidos Bioactivos · Dr. Bernardo Acosta</title>
-        <meta name="description" content="Abordaje integral del control de peso con péptidos bioactivos GLP-1, GLP-2 y GIP. Regulación del cortisol, estrés y metabolismo. Tordesillas, Valladolid." />
-        <meta name="keywords" content="control de peso natural, péptidos bioactivos, GLP-1, GLP-2, GIP, cortisol, estrés crónico, terapia natural Valladolid, Dr Bernardo Acosta" />
+        <title>Control de Peso y Péptidos Bioactivos · Programa Beecura Tordesillas</title>
+        <meta name="description" content="Programa de pérdida y control de peso con péptidos bioactivos GLP-1, GLP-2 y GIP. Dirección: Dr. Bernardo J. Acosta. Alojado en Beecura Tordesillas." />
+        <meta name="keywords" content="control de peso natural, péptidos bioactivos, GLP-1, GLP-2, GIP, cortisol, programa peso Tordesillas" />
       </Helmet>
 
       {/* HERO */}
@@ -96,6 +98,8 @@ export default function ControlPeso() {
           </motion.div>
         </div>
       </section>
+
+      <DrAcostaProgramDirector />
 
       {/* EL CORTISOL */}
       <section className="py-20 bg-white">
@@ -231,7 +235,7 @@ export default function ControlPeso() {
       <section className="py-20 bg-gradient-to-r from-olive-600 to-honey-600">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Inicia tu transformación metabólica</h2>
-          <p className="text-green-100 mb-8">Valoración personalizada con el Dr. Acosta. Sin compromiso.</p>
+          <p className="text-green-100 mb-8">Valoración del programa con {drAcosta.shortName}. Sin compromiso.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-olive-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
               Solicitar valoración <ArrowRight size={16} />

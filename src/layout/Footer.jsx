@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from 'lucide-react'
+import { site, apiterapeuta } from '../data/siteConfig'
 
 const services = [
   { label: 'Aire de Colmena', href: '/aire-de-colmena' },
   { label: 'Apiterapia y Apipuntura', href: '/apiterapia' },
   { label: 'Control de Peso y Péptidos', href: '/control-de-peso' },
-  { label: 'Enfermería a Domicilio', href: '/enfermeria-domicilio-valladolid' },
-  { label: 'Taller Escuela', href: '/taller-escuela' },
-  { label: 'Beecura España', href: '/beecura-espana' },
+  { label: "Vegg's Valladolid", href: '/veggs-valladolid' },
+  { label: 'Beecura Europa', href: '/beecura-espana' },
 ]
 
 const legal = [
@@ -20,37 +20,34 @@ const legal = [
 export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
-      {/* CTA banner */}
       <div className="bg-gradient-to-r from-honey-700 to-amber-600 py-10">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            ¿Listo para comenzar tu camino hacia el bienestar?
+            Beecura de Aire de Colmena — tu bienestar respiratorio
           </h2>
           <p className="text-honey-100 mb-6 text-sm md:text-base">
-            Contáctanos hoy y da el primer paso. Valoración personalizada sin compromiso.
+            Api-terapia natural respirando Aire de las Colmenas. Salud y medicina de la respiración.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20consulta"
+              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20aire%20de%20colmena"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-6 py-3 rounded-full hover:bg-honey-50 transition-colors shadow-md"
             >
               💬 WhatsApp
             </a>
-            <a
-              href="/contacto"
+            <Link
+              to="/contacto"
               className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
             >
-              Reservar consulta
-            </a>
+              Contactar
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        {/* Brand */}
         <div>
           <div className="flex items-center gap-2 mb-4">
             <span className="text-2xl">🐝</span>
@@ -60,7 +57,7 @@ export default function Footer() {
             </div>
           </div>
           <p className="text-sm text-gray-400 leading-relaxed mb-5">
-            Centro especializado en terapias naturales y bienestar integral dirigido por el Prof. Dr. Bernardo J. Acosta.
+            {site.tagline}. {apiterapeuta.name}, {apiterapeuta.role.toLowerCase()}.
           </p>
           <div className="flex gap-3">
             <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-honey-700 rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
@@ -75,7 +72,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Servicios */}
         <div>
           <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-4">Servicios</h4>
           <ul className="space-y-2">
@@ -89,7 +85,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Legal */}
         <div>
           <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-4">Información</h4>
           <ul className="space-y-2">
@@ -103,13 +98,12 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contacto */}
         <div>
           <h4 className="font-bold text-white text-sm uppercase tracking-widest mb-4">Contacto</h4>
           <div className="space-y-3">
             <div className="flex items-start gap-2">
               <MapPin size={13} className="text-honey-500 flex-shrink-0 mt-0.5" />
-              <span className="text-sm text-gray-400">Tordesillas, Valladolid, España</span>
+              <span className="text-sm text-gray-400">{site.location}</span>
             </div>
             <a href="tel:+525564452737" className="flex items-center gap-2 text-sm text-gray-400 hover:text-honey-400 transition-colors">
               <Phone size={13} className="text-honey-500" />
@@ -127,15 +121,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Disclaimer + Copyright */}
       <div className="border-t border-gray-800 py-6 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto space-y-3">
           <p className="text-xs text-gray-500 italic leading-relaxed text-center">
-            Las terapias ofrecidas en este centro no sustituyen el diagnóstico, tratamiento ni seguimiento médico convencional.
-            La información de esta web es de carácter orientativo. Consulta siempre con un profesional sanitario.
+            Las terapias ofrecidas no sustituyen el diagnóstico ni tratamiento médico convencional.
+            La información es orientativa. Consulta siempre con un profesional sanitario.
           </p>
           <p className="text-xs text-gray-600 text-center">
-            © {new Date().getFullYear()} Beecura Tordesillas · Prof. Dr. Bernardo J. Acosta · Todos los derechos reservados
+            © {new Date().getFullYear()} {site.name} · {apiterapeuta.name} · Todos los derechos reservados
           </p>
         </div>
       </div>

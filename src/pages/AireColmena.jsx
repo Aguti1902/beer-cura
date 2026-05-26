@@ -3,12 +3,15 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Wind, Shield, Clock, Users, CheckCircle, ArrowRight } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
+import MedicinaRespiracion from '../components/MedicinaRespiracion'
+import VideoBaoan from '../components/VideoBaoan'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsAireColmena } from '../data/faqs'
+import { apiterapeuta } from '../data/siteConfig'
 
 const steps = [
-  { num: '01', title: 'Valoración inicial', desc: 'Consulta previa con el Dr. Acosta para evaluar tu estado de salud y adaptar el protocolo a tus necesidades.' },
+  { num: '01', title: 'Valoración inicial', desc: 'Consulta previa para evaluar tu estado y adaptar el protocolo de respiración con Aire de Colmena a tus necesidades.' },
   { num: '02', title: 'Preparación', desc: 'Acondicionamiento del espacio y ajuste del dispositivo Beecura para la sesión. Ambiente tranquilo y controlado.' },
   { num: '03', title: 'Sesión de terapia', desc: 'Inhalación guiada del aire de colmena durante el tiempo establecido. Sesión relajante y no invasiva.' },
   { num: '04', title: 'Seguimiento', desc: 'Valoración posterior y ajuste del plan de sesiones según la evolución y sensaciones reportadas.' },
@@ -55,8 +58,8 @@ export default function AireColmena() {
               <span className="text-gradient">Aire de Colmena</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Inhala el microambiente natural de la colmena mediante el dispositivo medical Beecura.
-              Una experiencia única que puede apoyar el bienestar respiratorio y la relajación profunda.
+              Beecura de Aire de Colmena: api-terapia natural respirando el microambiente de la colmena.
+              Medicina de la respiración con técnicas conscientes enriquecidas con propóleo, miel y compuestos bioactivos.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Link to="/contacto" className="btn-primary text-base px-8 py-4">
@@ -115,8 +118,8 @@ export default function AireColmena() {
                   sin necesidad de estar en contacto directo con las abejas.
                 </p>
                 <p className="leading-relaxed">
-                  El aire enriquecido con partículas de <strong className="text-gray-800">propóleo, miel, cera de abejas y otros compuestos</strong> se inhala en sesiones guiadas por el Prof. Dr. Bernardo J. Acosta,
-                  dentro de un entorno tranquilo y profesional.
+                  El aire enriquecido con partículas de <strong className="text-gray-800">propóleo, miel, cera de abejas y otros compuestos</strong> se inhala en sesiones guiadas de respiración consciente,
+                  con el acompañamiento de <strong className="text-gray-800">{apiterapeuta.name}</strong>, {apiterapeuta.role.toLowerCase()}.
                 </p>
               </div>
               <div className="mt-8">
@@ -211,13 +214,17 @@ export default function AireColmena() {
         </div>
       </section>
 
+      <MedicinaRespiracion />
+
+      <VideoBaoan />
+
       {/* SEGURIDAD */}
       <section className="py-20 bg-honey-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <SectionTitle
             eyebrow="Seguridad"
             title="Tu seguridad es nuestra prioridad"
-            subtitle="Todas las sesiones se realizan bajo supervisión del Prof. Dr. Bernardo J. Acosta con protocolo individual."
+            subtitle="Todas las sesiones siguen el protocolo Beecura con valoración previa y acompañamiento profesional."
             centered
           />
           <div className="mt-12 grid sm:grid-cols-3 gap-6">

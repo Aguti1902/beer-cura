@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import SectionTitle from '../components/SectionTitle'
 import LocationCard from '../components/LocationCard'
+import EuropeStationsMap from '../components/EuropeStationsMap'
 import { beecuraCenters } from '../data/services'
 
 export default function BeecuraEspana() {
@@ -108,37 +109,7 @@ export default function BeecuraEspana() {
         </div>
       </section>
 
-      {/* MAPA VISUAL */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <SectionTitle
-            eyebrow="Mapa de centros"
-            title="Encuéntranos en el mapa"
-            centered
-          />
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="mt-10 bg-warm-50 rounded-3xl border border-warm-200 p-12 flex flex-col items-center justify-center gap-4"
-          >
-            <div className="text-6xl">🗺️</div>
-            <p className="text-gray-500 text-sm">Mapa de centros Beecura en España</p>
-            <div className="flex flex-col sm:flex-row gap-4 mt-4 text-sm">
-              {beecuraCenters.map(c => (
-                <div key={c.id} className="flex items-center gap-2 bg-white rounded-xl px-4 py-2 border border-warm-200 shadow-sm">
-                  <span className="w-2 h-2 bg-honey-500 rounded-full" />
-                  <span className="font-medium text-gray-700">{c.location}</span>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-gray-400 italic mt-4">
-              Próximamente integración con Google Maps
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <EuropeStationsMap />
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-honey-600 to-amber-600">

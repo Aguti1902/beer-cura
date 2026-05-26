@@ -40,7 +40,7 @@ export default function Contacto() {
     <>
       <Helmet>
         <title>Contacto · Beecura Tordesillas · Reservar Consulta</title>
-        <meta name="description" content="Contacta con Beecura Tordesillas para reservar consulta. Terapias naturales, aire de colmena, apiterapia, control de peso y enfermería a domicilio en Valladolid." />
+        <meta name="description" content="Contacta con Beecura Tordesillas. Reserva sesión de Aire de Colmena, apiterapia o información sobre el programa de control de peso." />
         <meta name="keywords" content="contacto Beecura Tordesillas, reservar consulta terapia natural, cita apiterapia Valladolid" />
       </Helmet>
 

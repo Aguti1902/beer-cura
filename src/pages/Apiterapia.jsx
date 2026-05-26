@@ -3,9 +3,13 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
+import ApiterapeutaProfile from '../components/ApiterapeutaProfile'
+import GaleriaApiterapia from '../components/GaleriaApiterapia'
+import VideoBaoan from '../components/VideoBaoan'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsApiterapia } from '../data/faqs'
+import { apiterapeuta } from '../data/siteConfig'
 
 const products = [
   {
@@ -31,7 +35,7 @@ const products = [
   {
     emoji: '💧',
     name: 'Veneno de abeja (Apitoxina)',
-    desc: 'La apitoxina contiene péptidos y enzimas de interés científico. Su uso terapéutico requiere valoración estricta previa. Solo bajo supervisión del Dr. Acosta.',
+    desc: 'La apitoxina contiene péptidos y enzimas de interés científico. Su uso terapéutico requiere valoración estricta previa y supervisión profesional.',
   },
   {
     emoji: '🕯️',
@@ -45,7 +49,7 @@ export default function Apiterapia() {
     <>
       <Helmet>
         <title>Apiterapia y Apipuntura · Productos de la Colmena · Tordesillas</title>
-        <meta name="description" content="Apiterapia con productos de la colmena: miel, propóleo, jalea real, polen y veneno de abeja. Apipuntura con valoración previa. Dr. Bernardo J. Acosta, Tordesillas." />
+        <meta name="description" content={`Apiterapia y apipuntura en Tordesillas con ${apiterapeuta.name}, apiterapeuta. Miel, propóleo, jalea real y protocolo individualizado.`} />
         <meta name="keywords" content="apiterapia, apipuntura, veneno de abeja, propóleo, jalea real, miel terapéutica, terapia natural Valladolid, apitoxina" />
       </Helmet>
 
@@ -95,9 +99,9 @@ export default function Apiterapia() {
           </div>
           <div className="bg-honey-50 rounded-3xl p-8 border border-honey-200">
             <p className="text-gray-700 leading-relaxed text-center text-lg">
-              En nuestro centro, la apiterapia se aplica bajo la supervisión del{' '}
-              <strong>Prof. MSc. Dr. Bernardo J. Acosta</strong>, especialista en Medicina Tradicional y Natural,
-              con protocolo individualizado para cada persona.
+              La apiterapia y la apipuntura en Beecura Tordesillas las imparte{' '}
+              <strong>{apiterapeuta.name}</strong>, {apiterapeuta.role.toLowerCase()}, con más de siete años de formación
+              continua con docentes de referencia en España y China.
             </p>
           </div>
         </div>
@@ -150,8 +154,8 @@ export default function Apiterapia() {
                 con un enfoque similar al de la acupuntura tradicional china.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Requiere una valoración previa exhaustiva y se realiza exclusivamente bajo la supervisión
-                del Dr. Acosta, con los protocolos de seguridad adecuados.
+                Requiere una valoración previa exhaustiva y se realiza bajo la supervisión de{' '}
+                <strong className="text-gray-800">{apiterapeuta.name}</strong>, con los protocolos de seguridad adecuados.
               </p>
               <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start gap-3">
                 <AlertTriangle size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
@@ -189,6 +193,12 @@ export default function Apiterapia() {
         </div>
       </section>
 
+      <ApiterapeutaProfile />
+
+      <GaleriaApiterapia />
+
+      <VideoBaoan />
+
       {/* FAQ */}
       <FAQ faqs={faqsApiterapia} title="Preguntas sobre Apiterapia" />
 
@@ -196,7 +206,7 @@ export default function Apiterapia() {
       <section className="py-20 bg-gradient-to-r from-amber-600 to-honey-600">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">¿Quieres saber si la apiterapia es para ti?</h2>
-          <p className="text-amber-100 mb-8">Solicita una valoración personalizada con el Dr. Acosta. Sin compromiso.</p>
+          <p className="text-amber-100 mb-8">Solicita una valoración personalizada con {apiterapeuta.name}. Sin compromiso.</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
               Solicitar valoración <ArrowRight size={16} />
