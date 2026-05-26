@@ -53,3 +53,9 @@
     @apply bg-gradient-to-r from-honey-600 to-amber-500 bg-clip-text text-transparent;
   }
 }
+
+/* Reproductor de audio nativo — sin caja negra de vídeo */
+audio {
+  width: 100%;
+  border-radius: 0.75rem;
+}

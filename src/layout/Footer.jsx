@@ -19,36 +19,9 @@ const legal = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="bg-gradient-to-r from-honey-700 to-amber-600 py-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
-            Beecura de Aire de Colmena — tu bienestar respiratorio
-          </h2>
-          <p className="text-honey-100 mb-6 text-sm md:text-base">
-            Api-terapia natural respirando Aire de las Colmenas. Salud y medicina de la respiración.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20aire%20de%20colmena"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-6 py-3 rounded-full hover:bg-honey-50 transition-colors shadow-md"
-            >
-              💬 WhatsApp
-            </a>
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-6 py-3 rounded-full hover:bg-white/10 transition-colors"
-            >
-              Contactar
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-        <div>
+    <footer className="bg-gray-900 text-gray-300 border-t-4 border-honey-600">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="sm:col-span-2 lg:col-span-1">
           <div className="flex items-center gap-2 mb-4">
             <span className="text-2xl">🐝</span>
             <div>
@@ -56,18 +29,23 @@ export default function Footer() {
               <span className="text-xs text-honey-400 block">Tordesillas · Valladolid</span>
             </div>
           </div>
-          <p className="text-sm text-gray-400 leading-relaxed mb-5">
+          <p className="text-sm text-gray-400 leading-relaxed mb-6">
             {site.tagline}. {apiterapeuta.name}, {apiterapeuta.role.toLowerCase()}.
           </p>
-          <div className="flex gap-3">
-            <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-honey-700 rounded-full flex items-center justify-center transition-colors" aria-label="Instagram">
-              <Instagram size={14} />
-            </a>
-            <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-honey-700 rounded-full flex items-center justify-center transition-colors" aria-label="Facebook">
-              <Facebook size={14} />
-            </a>
-            <a href="#" className="w-8 h-8 bg-gray-800 hover:bg-honey-700 rounded-full flex items-center justify-center transition-colors" aria-label="YouTube">
-              <Youtube size={14} />
+          <div className="flex flex-wrap gap-2">
+            <Link
+              to="/contacto"
+              className="inline-flex items-center justify-center bg-honey-600 hover:bg-honey-500 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            >
+              Reservar sesión
+            </Link>
+            <a
+              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20aire%20de%20colmena"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center border border-gray-600 hover:border-green-500 hover:text-green-400 text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+            >
+              💬 WhatsApp
             </a>
           </div>
         </div>

@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, TrendingUp, Brain, Moon, Zap } from 'lucide-react'
+import { CheckCircle, TrendingUp, Brain, Moon, Zap } from 'lucide-react'
+import PageCta from '../components/PageCta'
 import SectionTitle from '../components/SectionTitle'
 import DrAcostaProgramDirector from '../components/DrAcostaProgramDirector'
 import FAQ from '../components/FAQ'
@@ -231,26 +232,12 @@ export default function ControlPeso() {
       {/* FAQ */}
       <FAQ faqs={faqsControlPeso} title="Preguntas sobre Péptidos y Control de Peso" />
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-olive-600 to-honey-600">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Inicia tu transformación metabólica</h2>
-          <p className="text-green-100 mb-8">Valoración del programa con {drAcosta.shortName}. Sin compromiso.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-olive-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
-              Solicitar valoración <ArrowRight size={16} />
-            </Link>
-            <a
-              href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20el%20programa%20de%20control%20de%20peso"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
-            >
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageCta
+        title="Inicia tu transformación metabólica"
+        description={`Valoración del programa con ${drAcosta.shortName}. Sin compromiso.`}
+        primaryLabel="Solicitar valoración"
+        whatsappMessage="Hola, quiero información sobre el programa de control de peso"
+      />
     </>
   )
 }

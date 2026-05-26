@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { AlertTriangle, CheckCircle, ArrowRight } from 'lucide-react'
+import { AlertTriangle, CheckCircle } from 'lucide-react'
+import PageCta from '../components/PageCta'
 import SectionTitle from '../components/SectionTitle'
 import ApiterapeutaProfile from '../components/ApiterapeutaProfile'
 import GaleriaApiterapia from '../components/GaleriaApiterapia'
@@ -202,26 +203,12 @@ export default function Apiterapia() {
       {/* FAQ */}
       <FAQ faqs={faqsApiterapia} title="Preguntas sobre Apiterapia" />
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-amber-600 to-honey-600">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">¿Quieres saber si la apiterapia es para ti?</h2>
-          <p className="text-amber-100 mb-8">Solicita una valoración personalizada con {apiterapeuta.name}. Sin compromiso.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
-              Solicitar valoración <ArrowRight size={16} />
-            </Link>
-            <a
-              href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20apiterapia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
-            >
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageCta
+        title="¿Quieres saber si la apiterapia es para ti?"
+        description={`Solicita una valoración personalizada con ${apiterapeuta.name}. Sin compromiso.`}
+        primaryLabel="Solicitar valoración"
+        whatsappMessage="Hola, quiero información sobre apiterapia"
+      />
     </>
   )
 }

@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion'
 import { Wind } from 'lucide-react'
 import SectionTitle from './SectionTitle'
-import LocalVideo from './LocalVideo'
+import LocalAudio from './LocalAudio'
 import LegalDisclaimer from './LegalDisclaimer'
 import { medicinaRespiracion } from '../data/siteConfig'
 
-export default function MedicinaRespiracion({ showVideo = true, className = '' }) {
-  const { title, subtitle, paragraphs, video } = medicinaRespiracion
+/** @param {'audio' | 'image'} media — audio en Aire de Colmena; imagen en inicio */
+export default function MedicinaRespiracion({ media = 'audio', className = '' }) {
+  const { title, subtitle, paragraphs, audio, image } = medicinaRespiracion
 
   return (
     <section className={`py-20 bg-gradient-to-b from-warm-50 to-white ${className}`}>
@@ -15,10 +16,10 @@ export default function MedicinaRespiracion({ showVideo = true, className = '' }
           eyebrow="Salud y bienestar"
           title={title}
           subtitle={subtitle}
-          centered
+          centered={media === 'image'}
         />
 
-        <div className="mt-12 grid lg:grid-cols-2 gap-12 items-start">
+        <div className={`mt-12 grid lg:grid-cols-2 gap-12 items-start ${media === 'image' ? '' : ''}`}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -41,15 +42,34 @@ export default function MedicinaRespiracion({ showVideo = true, className = '' }
             <LegalDisclaimer />
           </motion.div>
 
-          {showVideo && (
-            <motion.div
+          {media === 'audio' && (
+            <LocalAudio
+              src={audio.src}
+              speaker={audio.speaker}
+              title={audio.title}
+              caption={audio.caption}
+            />
+          )}
+
+          {media === 'image' && image?.src && (
+            <motion.figure
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="space-y-4"
+              className="rounded-2xl overflow-hidden border border-honey-200 shadow-xl bg-honey-50"
             >
-              <LocalVideo src={video.src} title={video.title} caption={video.caption} />
-            </motion.div>
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="w-full aspect-[4/5] object-cover object-top"
+                loading="lazy"
+              />
+              {image.caption && (
+                <figcaption className="px-5 py-4 text-sm text-gray-600 bg-white border-t border-honey-100">
+                  {image.caption}
+                </figcaption>
+              )}
+            </motion.figure>
           )}
         </div>
       </div>

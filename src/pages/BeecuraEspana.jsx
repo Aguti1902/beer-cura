@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import SectionTitle from '../components/SectionTitle'
+import PageCta from '../components/PageCta'
 import LocationCard from '../components/LocationCard'
 import EuropeStationsMap from '../components/EuropeStationsMap'
 import { beecuraCenters } from '../data/services'
@@ -111,16 +111,12 @@ export default function BeecuraEspana() {
 
       <EuropeStationsMap />
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-honey-600 to-amber-600">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">¿Quieres abrir tu centro Beecura?</h2>
-          <p className="text-honey-100 mb-8">Si estás interesado en integrarte en la red Beecura, contáctanos para más información.</p>
-          <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
-            Contactar
-          </Link>
-        </div>
-      </section>
+      <PageCta
+        title="¿Quieres abrir tu centro Beecura?"
+        description="Si estás interesado en integrarte en la red Beecura, contáctanos para más información."
+        primaryLabel="Contactar"
+        showWhatsApp={false}
+      />
     </>
   )
 }

@@ -1,7 +1,8 @@
 import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Wind, Shield, Clock, Users, CheckCircle, ArrowRight } from 'lucide-react'
+import { Wind, Shield, Clock, Users, CheckCircle } from 'lucide-react'
+import PageCta from '../components/PageCta'
 import SectionTitle from '../components/SectionTitle'
 import MedicinaRespiracion from '../components/MedicinaRespiracion'
 import VideoBaoan from '../components/VideoBaoan'
@@ -248,26 +249,11 @@ export default function AireColmena() {
       {/* FAQ */}
       <FAQ faqs={faqsAireColmena} title="Preguntas sobre el Aire de Colmena" />
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-r from-honey-600 to-amber-600">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">¿Te gustaría probar la terapia?</h2>
-          <p className="text-honey-100 mb-8">Reserva tu primera sesión con valoración personalizada incluida.</p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/contacto" className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-md">
-              Reservar sesión <ArrowRight size={16} />
-            </Link>
-            <a
-              href="https://wa.me/525564452737?text=Hola,%20quiero%20reservar%20una%20sesión%20de%20aire%20de%20colmena"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition-colors"
-            >
-              💬 WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageCta
+        title="¿Te gustaría probar la terapia?"
+        description="Reserva tu primera sesión con valoración personalizada incluida."
+        whatsappMessage="Hola, quiero reservar una sesión de aire de colmena"
+      />
     </>
   )
 }

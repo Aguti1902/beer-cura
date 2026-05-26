@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Heart, Leaf, Wind } from 'lucide-react'
+import PageCta from '../components/PageCta'
 import SectionTitle from '../components/SectionTitle'
 import ServiceCard from '../components/ServiceCard'
 import ApiterapeutaProfile from '../components/ApiterapeutaProfile'
@@ -192,7 +193,7 @@ export default function Home() {
         </div>
       </section>
 
-      <MedicinaRespiracion showVideo={false} />
+      <MedicinaRespiracion media="image" />
 
       <section className="py-24 bg-gradient-to-b from-warm-50 to-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -272,41 +273,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 bg-gradient-to-br from-honey-600 to-amber-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-honeycomb opacity-10" />
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <div className="text-5xl mb-4">🐝</div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Respira el Aire de la Colmena
-            </h2>
-            <p className="text-honey-100 text-lg mb-8">
-              Reserva tu sesión de Beecura de Aire de Colmena. Medicina de la respiración en Tordesillas.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contacto"
-                className="inline-flex items-center gap-2 bg-white text-honey-700 font-bold px-8 py-4 rounded-full hover:bg-honey-50 transition-colors shadow-lg"
-              >
-                Reservar sesión
-              </Link>
-              <a
-                href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20Beecura%20Aire%20de%20Colmena"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-whatsapp px-8 py-4"
-              >
-                💬 WhatsApp
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <PageCta
+        title="Respira el Aire de la Colmena"
+        description="Reserva tu sesión de Beecura de Aire de Colmena. Medicina de la respiración en Tordesillas."
+        whatsappMessage="Hola, quiero información sobre Beecura Aire de Colmena"
+      />
     </>
   )
 }

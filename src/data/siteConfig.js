@@ -59,7 +59,7 @@ export const vegg = {
   address: 'C. Tahonas, 5, 47003 Valladolid',
   mapsUrl: 'https://maps.app.goo.gl/qcFsoRzC1AbcuVSW7',
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Vegg's+Alimentación+Ecológica+Calle+Tahonas+5+Valladolid&output=embed",
+    'https://www.google.com/maps?q=Calle+Tahonas+5+47003+Valladolid+Veggs+Alimentacion+Ecologica&output=embed',
   description:
     "Vegg's es nuestro establecimiento colaborador y punto de representación en Valladolid capital, donde puedes conocer el enfoque Beecura y la medicina de la respiración con Aire de Colmena.",
 }
@@ -75,10 +75,16 @@ export const medicinaRespiracion = {
     'Queda mucho por conocer y aprender de sus efectos terapéuticos.',
     'Hasta que la neurociencia y los más avanzados instrumentos de medición revelen el detalle de su acción en nuestros sistemas neuronales y en el cerebro, además de su acción directa en las vías y en el sistema respiratorio.',
   ],
-  video: {
+  audio: {
     src: '/videos/medicina-respiracion-castellanos.mp4',
-    title: 'N. Castellanos — neurocientífica · eje respiración / cerebro',
-    caption: 'La medicina de la Respiración',
+    speaker: 'N. Castellanos — neurocientífica',
+    title: 'Eje respiración / cerebro',
+    caption: 'La medicina de la Respiración (audio)',
+  },
+  image: {
+    src: '/images/ramon-regalado-apiterapeuta.jpeg',
+    alt: 'Ramón Regalado Rico — medicina de la respiración y apiterapia',
+    caption: 'Ramón Regalado Rico · Apiterapeuta · Beecura Tordesillas',
   },
 }
 
