@@ -41,7 +41,7 @@ export const google = {
   mapEmbedUrl:
     'https://www.google.com/maps?q=Beecura+Tordesillas+Valladolid&output=embed',
   /** Opcional: Place ID + VITE_GOOGLE_PLACES_API_KEY para cargar reseñas en vivo */
-  placeId: import.meta.env.VITE_GOOGLE_PLACE_ID || '',
+  placeId: import.meta.env?.VITE_GOOGLE_PLACE_ID || '',
 }
 
 export const beecuraEuropeMap = {
@@ -53,7 +53,7 @@ export const beecuraEuropeMap = {
   sourceUrl: 'https://www.beecura.com/kontakt/#karte',
 }
 
-export const vegg = {
+export const veggs = {
   name: "Vegg's Alimentación Ecológica",
   role: 'Establecimiento colaborador y representante en Valladolid capital',
   address: 'C. Tahonas, 5, 47003 Valladolid',

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { MapPin, ExternalLink, ArrowRight, Leaf, Store } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
 import PageCta from '../components/PageCta'
-import { vegg } from '../data/siteConfig'
+import { veggs } from '../data/siteConfig'
 
 export default function Veggs() {
   return (
