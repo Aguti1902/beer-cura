@@ -14,6 +14,7 @@ import GaleriaBeecura from '../components/GaleriaBeecura'
 import YouTubeSection from '../components/YouTubeSection'
 import BeecuraMark from '../components/BeecuraMark'
 import DolenciasAdC from '../components/DolenciasAdC'
+import { services } from '../data/services'
 import { site, apiterapeuta, heroImage } from '../data/siteConfig'
 
 const benefits = [
