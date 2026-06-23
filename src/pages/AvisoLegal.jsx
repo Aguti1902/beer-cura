@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { contact } from '../data/siteConfig'
 
 export default function AvisoLegal() {
   return (
@@ -24,8 +25,8 @@ export default function AvisoLegal() {
                   <li><strong>Titular:</strong> Ramón Regalado Rico (Beecura Tordesillas)</li>
                   <li><strong>Denominación:</strong> Beecura Tordesillas</li>
                   <li><strong>Localización:</strong> Tordesillas, Valladolid, España</li>
-                  <li><strong>Correo electrónico:</strong> bermato2004@yahoo.com</li>
-                  <li><strong>Teléfono:</strong> +52 55 6445 2737</li>
+                  <li><strong>Correo electrónico:</strong> {contact.email}</li>
+                  <li><strong>Teléfono / WhatsApp:</strong> {contact.phone}</li>
                 </ul>
               </section>
 

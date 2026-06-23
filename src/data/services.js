@@ -1,3 +1,5 @@
+import { contact } from '../data/siteConfig'
+
 export const services = [
   {
     id: 'aire-colmena',
@@ -28,13 +30,13 @@ export const services = [
     benefits: ['Péptidos GLP-1/2 y GIP', 'Regulación del cortisol', 'Programa individualizado'],
   },
   {
-    id: 'veggs',
-    title: "Vegg's Valladolid",
-    shortDesc: "Establecimiento colaborador y representante Beecura en Valladolid capital.",
-    icon: '🌱',
+    id: 'donde-encontrarnos',
+    title: 'Dónde encontrarnos',
+    shortDesc: 'Centro en Tordesillas y puntos de venta en la provincia y Valladolid capital.',
+    icon: '📍',
     color: 'olive',
-    href: '/veggs-valladolid',
-    benefits: ['Alimentación ecológica', 'Punto colaborador', 'Valladolid capital'],
+    href: '/donde-encontrarnos',
+    benefits: ['Beecura Tordesillas', 'Herbolario de Paula', "Vegg's Valladolid"],
   },
 ]
 
@@ -45,8 +47,8 @@ export const beecuraCenters = [
     location: 'Tordesillas, Valladolid',
     description:
       'Centro de referencia en Castilla y León. Actividad principal: Beecura de Aire de Colmena, apiterapia y medicina de la respiración.',
-    phone: ['+52 55 6445 2737', '+52 55 4732 5430'],
-    email: 'bermato2004@yahoo.com',
+    phone: [contact.phone],
+    email: contact.email,
     featured: true,
   },
   {

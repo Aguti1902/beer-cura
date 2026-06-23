@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X, Phone } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import BeecuraMark from '../components/BeecuraMark'
+import { contact, whatsappUrl } from '../data/siteConfig'
 
 const navLinks = [
   { label: 'Inicio', href: '/' },
@@ -14,7 +16,7 @@ const navLinks = [
       { label: 'Control de Peso', href: '/control-de-peso' },
     ],
   },
-  { label: "Vegg's Valladolid", href: '/veggs-valladolid' },
+  { label: 'Dónde encontrarnos', href: '/donde-encontrarnos' },
   { label: 'Beecura Europa', href: '/beecura-espana' },
   { label: 'Opiniones', href: '/opiniones' },
   { label: 'Contacto', href: '/contacto' },
@@ -48,7 +50,7 @@ export default function Header() {
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <span className="text-2xl">🐝</span>
             <div>
-              <span className="font-bold text-gray-800 text-base md:text-lg leading-none block">Beecura</span>
+              <BeecuraMark className="font-bold text-gray-800 text-base md:text-lg leading-none" />
               <span className="text-xs text-honey-600 leading-none block font-medium">Tordesillas</span>
             </div>
           </Link>
@@ -102,12 +104,12 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+525564452737" className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-honey-700 transition-colors">
+            <a href={contact.phoneHref} className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-honey-700 transition-colors">
               <Phone size={14} />
               <span className="font-medium">Llamar</span>
             </a>
             <a
-              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20Beecura%20Aire%20de%20Colmena"
+              href={whatsappUrl('Hola, me gustaría reservar una sesión de Beecura Aire de Colmena')}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary text-sm py-2.5 px-5"
@@ -172,7 +174,7 @@ export default function Header() {
               )}
               <div className="pt-3 border-t border-warm-100 flex flex-col gap-2">
                 <a
-                  href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20Beecura%20Aire%20de%20Colmena"
+                  href={whatsappUrl('Hola, me gustaría reservar una sesión de Beecura Aire de Colmena')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-primary text-sm justify-center"

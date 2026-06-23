@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { contact } from '../data/siteConfig'
 
 export default function Privacidad() {
   return (
@@ -20,7 +21,7 @@ export default function Privacidad() {
                 <ul className="list-disc list-inside space-y-1">
                   <li><strong>Responsable:</strong> Ramón Regalado Rico (Beecura Tordesillas)</li>
                   <li><strong>Denominación:</strong> Beecura Tordesillas</li>
-                  <li><strong>Email:</strong> bermato2004@yahoo.com</li>
+                  <li><strong>Email:</strong> {contact.email}</li>
                 </ul>
               </section>
 
@@ -73,7 +74,7 @@ export default function Privacidad() {
                   <li><strong>Portabilidad:</strong> recibir sus datos en formato electrónico.</li>
                 </ul>
                 <p className="mt-3">
-                  Para ejercer estos derechos, puede enviar una solicitud a: <strong>bermato2004@yahoo.com</strong>
+                  Para ejercer estos derechos, puede enviar una solicitud a: <strong>{contact.email}</strong>
                 </p>
               </section>
 

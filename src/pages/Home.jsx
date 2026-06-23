@@ -9,10 +9,12 @@ import ApiterapeutaProfile from '../components/ApiterapeutaProfile'
 import MedicinaRespiracion from '../components/MedicinaRespiracion'
 import GoogleReviewsSection from '../components/GoogleReviewsSection'
 import EuropeStationsMap from '../components/EuropeStationsMap'
-import VideoEmbed from '../components/VideoEmbed'
 import LegalDisclaimer from '../components/LegalDisclaimer'
-import { services } from '../data/services'
-import { site, apiterapeuta } from '../data/siteConfig'
+import GaleriaBeecura from '../components/GaleriaBeecura'
+import YouTubeSection from '../components/YouTubeSection'
+import BeecuraMark from '../components/BeecuraMark'
+import DolenciasAdC from '../components/DolenciasAdC'
+import { site, apiterapeuta, heroImage } from '../data/siteConfig'
 
 const benefits = [
   { icon: Wind, title: 'Medicina de la respiración', desc: 'Técnicas largas y lentas, abiertas a todo el mundo, potenciadas con el Aire de Colmena.' },
@@ -32,7 +34,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>Beecura Tordesillas · Aire de Colmena · Medicina de la Respiración</title>
+        <title>Beecura® Tordesillas · Aire de Colmena · Medicina de la Respiración</title>
         <meta
           name="description"
           content="Beecura de Aire de Colmena en Tordesillas: api-terapia natural respirando Aire de las Colmenas. Salud y medicina de la respiración, apiterapia y apipuntura."
@@ -65,14 +67,21 @@ export default function Home() {
             </motion.div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
-              <span className="text-gradient">Beecura</span>
-              {' '}de Aire de Colmena
+              <BeecuraMark className="text-gradient font-bold" as="span"> de Aire de Colmena</BeecuraMark>
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
               Salud y medicina de la respiración. Nuestra actividad principal es la api-terapia natural
-              respirando el Aire de las Colmenas con el dispositivo medical Beecura, en Tordesillas (Valladolid).
+              respirando el Aire de las Colmenas con el dispositivo medical <BeecuraMark />, en Tordesillas (Valladolid).
             </p>
+
+            <div className="lg:hidden mb-8 rounded-2xl overflow-hidden border border-honey-200 shadow-lg">
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                className="w-full aspect-[4/3] object-cover"
+              />
+            </div>
 
             <div className="flex flex-wrap gap-3 mb-10">
               <Link to="/aire-de-colmena" className="btn-primary text-base px-8 py-4">
@@ -99,25 +108,29 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:flex flex-col gap-4"
           >
-            <div className="bg-white/80 backdrop-blur rounded-3xl border border-honey-100 shadow-xl p-8 flex flex-col gap-6">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-honey-100 rounded-2xl flex items-center justify-center text-3xl">🍯</div>
-                <div>
-                  <p className="font-bold text-gray-800">Aire de Colmena</p>
-                  <p className="text-sm text-gray-500">Actividad principal · Beecura</p>
-                </div>
+            <div className="bg-white/80 backdrop-blur rounded-3xl border border-honey-100 shadow-xl overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={heroImage.src}
+                  alt={heroImage.alt}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                {['🫁 Medicina respiración', '🐝 Apiterapia', '🌿 Control de peso', "🌱 Vegg's Valladolid"].map(item => (
-                  <div key={item} className="bg-warm-50 rounded-xl p-3 text-sm font-medium text-gray-700">
-                    {item}
+              <div className="p-6 flex flex-col gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-honey-100 rounded-2xl flex items-center justify-center text-2xl">🍯</div>
+                  <div>
+                    <p className="font-bold text-gray-800">Aire de Colmena</p>
+                    <p className="text-sm text-gray-500">Cabana Beecura · Tordesillas</p>
                   </div>
-                ))}
-              </div>
-              <div className="bg-honey-50 rounded-xl p-4">
-                <p className="text-xs text-gray-500 mb-1">Apiterapeuta</p>
-                <p className="font-bold text-gray-800">{apiterapeuta.name}</p>
-                <p className="text-xs text-honey-600">{apiterapeuta.role}</p>
+                </div>
+                <div className="grid grid-cols-2 gap-3">
+                  {['🫁 Medicina respiración', '🐝 Apiterapia', '🌿 Control de peso', '📍 Dónde encontrarnos'].map(item => (
+                    <div key={item} className="bg-warm-50 rounded-xl p-3 text-sm font-medium text-gray-700">
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -133,6 +146,8 @@ export default function Home() {
         </div>
       </section>
 
+      <DolenciasAdC />
+
       <section className="py-24 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -143,9 +158,9 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <SectionTitle
-                eyebrow="Qué es Beecura"
+                eyebrow="Qué es Beecura®"
                 title="El aire de la colmena como terapia"
-                subtitle="El dispositivo medical Beecura permite inhalar el microambiente natural del interior de una colmena activa: aire enriquecido con vapores de miel, propóleo, cera y compuestos bioactivos."
+                subtitle="El dispositivo medical Beecura® permite inhalar el microambiente natural del interior de una colmena activa: aire enriquecido con vapores de miel, propóleo, cera y compuestos bioactivos."
               />
               <div className="mt-8 space-y-4">
                 {[
@@ -179,7 +194,7 @@ export default function Home() {
               <div className="aspect-square bg-gradient-to-br from-honey-100 to-amber-50 rounded-3xl flex items-center justify-center border border-honey-200 shadow-lg overflow-hidden">
                 <div className="text-center p-8">
                   <div className="text-8xl mb-4 animate-float">🐝</div>
-                  <p className="font-bold text-2xl text-gray-800 mb-2">Dispositivo Beecura</p>
+                  <p className="font-bold text-2xl text-gray-800 mb-2">Dispositivo <BeecuraMark /></p>
                   <p className="text-gray-500 text-sm">Microambiente de colmena controlado</p>
                   <div className="mt-6 grid grid-cols-3 gap-3 text-xs">
                     {['Propóleo', 'Miel', 'Cera', 'Enzimas', 'Polen', 'Compuestos'].map(p => (
@@ -232,7 +247,7 @@ export default function Home() {
           <SectionTitle
             eyebrow="Servicios"
             title="Terapias y puntos de referencia"
-            subtitle="Beecura de Aire de Colmena es la actividad principal. También apiterapia, programa de control de peso y colaboración con Vegg's en Valladolid."
+            subtitle="Beecura de Aire de Colmena es la actividad principal. También apiterapia, programa de control de peso y puntos de venta en la provincia."
             centered
           />
           <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -243,22 +258,11 @@ export default function Home() {
         </div>
       </section>
 
+      <GaleriaBeecura />
+
       <ApiterapeutaProfile />
 
-      <section className="py-24 bg-gray-900 bg-honeycomb">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <SectionTitle
-            eyebrow="Vídeo"
-            title="Beecura de Aire de Colmena en acción"
-            subtitle="Conoce el dispositivo Beecura y una sesión de terapia respirando el microambiente de la colmena."
-            centered
-            light
-          />
-          <div className="mt-12">
-            <VideoEmbed vimeoId="1163047347" title="Beecura - Terapia con aire de colmena" />
-          </div>
-        </div>
-      </section>
+      <YouTubeSection light />
 
       <EuropeStationsMap />
 

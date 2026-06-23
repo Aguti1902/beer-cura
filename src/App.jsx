@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom'
 import { useEffect } from 'react'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
@@ -6,7 +6,7 @@ import AireColmena from './pages/AireColmena'
 import Apiterapia from './pages/Apiterapia'
 import ControlPeso from './pages/ControlPeso'
 import BeecuraEspana from './pages/BeecuraEspana'
-import Veggs from './pages/Veggs'
+import DondeEncontrarnos from './pages/DondeEncontrarnos'
 import Opiniones from './pages/Opiniones'
 import Contacto from './pages/Contacto'
 import AvisoLegal from './pages/AvisoLegal'
@@ -31,12 +31,12 @@ function AppRoutes() {
           <Route path="/apiterapia" element={<Apiterapia />} />
           <Route path="/control-de-peso" element={<ControlPeso />} />
           <Route path="/beecura-espana" element={<BeecuraEspana />} />
-          <Route path="/veggs-valladolid" element={<Veggs />} />
+          <Route path="/donde-encontrarnos" element={<DondeEncontrarnos />} />
+          <Route path="/veggs-valladolid" element={<Navigate to="/donde-encontrarnos" replace />} />
           <Route path="/opiniones" element={<Opiniones />} />
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/aviso-legal" element={<AvisoLegal />} />
           <Route path="/privacidad" element={<Privacidad />} />
-          {/* 404 */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

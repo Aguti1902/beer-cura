@@ -9,7 +9,11 @@ import VideoBaoan from '../components/VideoBaoan'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsAireColmena } from '../data/faqs'
-import { apiterapeuta } from '../data/siteConfig'
+import DolenciasAdC from '../components/DolenciasAdC'
+import BeecuraMark from '../components/BeecuraMark'
+import GaleriaBeecura from '../components/GaleriaBeecura'
+import YouTubeSection from '../components/YouTubeSection'
+import { apiterapeuta, whatsappUrl } from '../data/siteConfig'
 
 const steps = [
   { num: '01', title: 'Valoración inicial', desc: 'Consulta previa para evaluar tu estado y adaptar el protocolo de respiración con Aire de Colmena a tus necesidades.' },
@@ -59,7 +63,7 @@ export default function AireColmena() {
               <span className="text-gradient">Aire de Colmena</span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl mx-auto">
-              Beecura de Aire de Colmena: api-terapia natural respirando el microambiente de la colmena.
+              <BeecuraMark className="font-semibold text-gray-800" /> de Aire de Colmena: api-terapia natural respirando el microambiente de la colmena.
               Medicina de la respiración con técnicas conscientes enriquecidas con propóleo, miel y compuestos bioactivos.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
@@ -67,7 +71,7 @@ export default function AireColmena() {
                 Reservar sesión
               </Link>
               <a
-                href="https://wa.me/525564452737?text=Hola,%20me%20interesa%20la%20terapia%20con%20aire%20de%20colmena"
+                href={whatsappUrl('Hola, me interesa la terapia con aire de colmena')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp text-base px-8 py-4"
@@ -78,6 +82,8 @@ export default function AireColmena() {
           </motion.div>
         </div>
       </section>
+
+      <DolenciasAdC />
 
       {/* QUÉ ES */}
       <section className="py-20 bg-white">
@@ -217,7 +223,11 @@ export default function AireColmena() {
 
       <MedicinaRespiracion />
 
+      <GaleriaBeecura title="Nuestra cabana de Aire de Colmena" />
+
       <VideoBaoan />
+
+      <YouTubeSection />
 
       {/* SEGURIDAD */}
       <section className="py-20 bg-honey-50">

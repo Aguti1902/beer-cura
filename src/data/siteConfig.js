@@ -1,9 +1,46 @@
 /** Configuración central del sitio — espíritu Beecura Tordesillas */
 
 export const site = {
-  name: 'Beecura Tordesillas',
+  name: 'Beecura® Tordesillas',
+  brand: 'Beecura',
   tagline: 'Api-terapia natural respirando Aire de las Colmenas',
   location: 'Tordesillas, Valladolid, España',
+}
+
+export const dolenciasAdC = [
+  { id: 'alergias', emphasis: 'ALERGIAS', rest: ' respiratorias' },
+  { id: 'asma', label: 'ASMA' },
+  { id: 'pulmonares', emphasis: 'Enfermedades', rest: ' PULMONARES' },
+  { id: 'epoc', label: 'EPOC' },
+  { id: 'estres', label: 'ESTRÉS' },
+  { id: 'insomnio', label: 'INSOMNIO' },
+  { id: 'rinitis', label: 'RINITIS' },
+]
+
+export const videoSonodinamica = {
+  vimeoId: '1163047347',
+  vimeoUrl: 'https://vimeo.com/1163047347?fl=pl&fe=sh',
+  eyebrow: 'Terapia complementaria',
+  title: 'Apiterapia y terapia Sonodinámica para el tratamiento de tumores cerebrales',
+  subtitle:
+    'Terapia alternativa complementaria con veneno de abeja y sonoterapia. Vídeo informativo sobre el abordaje con apitoxina y sonodinámica.',
+}
+
+export const contact = {
+  email: 'ramon@apipuntura-tordesillas.com',
+  whatsapp: '34609426793',
+  whatsappDisplay: '609 426 793',
+  phone: '+34 609 426 793',
+  phoneHref: 'tel:+34609426793',
+}
+
+export function whatsappUrl(message) {
+  return `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(message)}`
+}
+
+export const heroImage = {
+  src: '/images/nuevas/cabana-campo-tordesillas.png',
+  alt: 'Cabana Beecura de Aire de Colmena en el campo de Tordesillas',
 }
 
 export const apiterapeuta = {
@@ -14,12 +51,20 @@ export const apiterapeuta = {
   note: 'Agradecimiento a los maestros y docentes con los que me he formado a lo largo de estos años.',
 }
 
+export const alessioMunzi = {
+  name: 'Alessio Munzi',
+  role: 'Apiterapeuta colaborador',
+  bio: 'Apiterapeuta colaborador especializado en apiterapia y apipuntura con veneno de abeja. Se encarga de todas las sesiones y atenciones a domicilio en Valladolid capital y provincia.',
+  website: 'https://www.apiterapiavalladolid.com',
+  websiteLabel: 'apiterapiavalladolid.com',
+}
+
 export const videoBaoan = {
   src: '/videos/baoan-aire-colmena-mtc.mp4',
   eyebrow: 'Experiencia internacional',
   title: 'Aire de Colmena y Medicina Tradicional China',
   subtitle:
-    "Sesión en el hospital Bao'an de Shenzhen (China) con una de nuestras usuarias, en el marco de la medicina tradicional china y la terapia Beecura.",
+    "Sesión en el hospital Bao'an de Shenzhen (China), en el marco de la medicina tradicional china y la terapia Beecura®.",
   videoTitle: "Hospital Bao'an · Shenzhen (China)",
   caption: 'Aire de Colmena integrado con medicina tradicional china.',
 }
@@ -32,15 +77,12 @@ export const drAcosta = {
 }
 
 export const google = {
-  /** Enlace a reseñas en Google Maps — actualizar si hay ficha propia */
   reviewsUrl:
     'https://www.google.com/maps/search/?api=1&query=Beecura+Tordesillas+apiterapia+aire+colmena',
   writeReviewUrl:
     'https://www.google.com/maps/search/?api=1&query=Beecura+Tordesillas',
-  /** Embed del mapa (búsqueda). Sustituir por embed de ficha si el cliente lo facilita */
   mapEmbedUrl:
     'https://www.google.com/maps?q=Beecura+Tordesillas+Valladolid&output=embed',
-  /** Opcional: Place ID + VITE_GOOGLE_PLACES_API_KEY para cargar reseñas en vivo */
   placeId: import.meta.env?.VITE_GOOGLE_PLACE_ID || '',
 }
 
@@ -53,16 +95,48 @@ export const beecuraEuropeMap = {
   sourceUrl: 'https://www.beecura.com/kontakt/#karte',
 }
 
-export const veggs = {
-  name: "Vegg's Alimentación Ecológica",
-  role: 'Establecimiento colaborador y representante en Valladolid capital',
-  address: 'C. Tahonas, 5, 47003 Valladolid',
-  mapsUrl: 'https://maps.app.goo.gl/qcFsoRzC1AbcuVSW7',
-  mapEmbedUrl:
-    'https://www.google.com/maps?q=Calle+Tahonas+5+47003+Valladolid+Veggs+Alimentacion+Ecologica&output=embed',
-  description:
-    "Vegg's es nuestro establecimiento colaborador y punto de representación en Valladolid capital, donde puedes conocer el enfoque Beecura y la medicina de la respiración con Aire de Colmena.",
+export const youtube = {
+  playlistId: 'PLGH9fLBAJlVViXtgxaiqCu_ueLM3V-kbr',
+  playlistUrl:
+    'https://youtube.com/playlist?list=PLGH9fLBAJlVViXtgxaiqCu_ueLM3V-kbr&si=dGa0uh4v82hxn5DT',
+  channelUrl: 'https://youtube.com/@beecuratordesillas?si=3bcZcniCrFNm2USu',
+  channelLabel: '@beecuratordesillas',
 }
+
+export const puntosVenta = [
+  {
+    id: 'beecura-tordesillas',
+    name: 'Beecura Tordesillas',
+    role: 'Centro de terapia · Aire de Colmena',
+    address: 'Tordesillas, Valladolid',
+    city: 'Tordesillas',
+    mapsUrl: 'https://maps.google.com/?q=Tordesillas,Valladolid',
+    mapEmbedUrl: 'https://www.google.com/maps?q=Tordesillas+Valladolid+Beecura&output=embed',
+  },
+  {
+    id: 'herbolario-paula',
+    name: 'El Herbolario de Paula',
+    role: 'Punto de venta en Tordesillas',
+    address: 'Av. Valladolid, 6, 47100 Tordesillas',
+    city: 'Tordesillas',
+    mapsUrl: 'https://maps.app.goo.gl/b8jDt3VpVHoegtXbA',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Herbolario+Paula+Av+Valladolid+6+Tordesillas&output=embed',
+  },
+  {
+    id: 'veggs',
+    name: "Vegg's Alimentación Ecológica",
+    role: 'Punto de venta en Valladolid capital',
+    address: 'C. Tahonas, 5, 47003 Valladolid',
+    city: 'Valladolid capital',
+    mapsUrl: 'https://maps.app.goo.gl/qcFsoRzC1AbcuVSW7',
+    mapEmbedUrl:
+      'https://www.google.com/maps?q=Calle+Tahonas+5+47003+Valladolid+Veggs+Alimentacion+Ecologica&output=embed',
+  },
+]
+
+/** @deprecated usar puntosVenta */
+export const veggs = puntosVenta.find((p) => p.id === 'veggs')
 
 export const medicinaRespiracion = {
   title: 'La medicina de la respiración',
@@ -82,9 +156,9 @@ export const medicinaRespiracion = {
     caption: 'La medicina de la Respiración (audio)',
   },
   image: {
-    src: '/images/ramon-regalado-apiterapeuta.jpeg',
-    alt: 'Ramón Regalado Rico — medicina de la respiración y apiterapia',
-    caption: 'Ramón Regalado Rico · Apiterapeuta · Beecura Tordesillas',
+    src: '/images/nuevas/sesion-aire-colmena.png',
+    alt: 'Sesión de terapia con Aire de Colmena Beecura',
+    caption: 'Terapia Beecura de Aire de Colmena · Tordesillas',
   },
 }
 
@@ -106,5 +180,38 @@ export const galeriaApiterapia = [
     src: '/images/equipo-baoan-shenzhen.jpeg',
     alt: "Equipo médico del hospital Bao'an en Shenzhen (China)",
     caption: "Equipo médico y enfermería del ala de Apiterapia del hospital Bao'an, Shenzhen (China)",
+  },
+]
+
+export const galeriaBeecura = [
+  {
+    id: 'campo',
+    src: '/images/nuevas/cabana-campo-tordesillas.png',
+    alt: 'Cabana Beecura en el campo de Tordesillas',
+    caption: 'Nuestra cabana de Aire de Colmena en Tordesillas',
+  },
+  {
+    id: 'interior',
+    src: '/images/nuevas/cabana-interior-colmena.png',
+    alt: 'Interior de la cabana con colmenas y sillones',
+    caption: 'Interior de la cabana · microambiente de colmena',
+  },
+  {
+    id: 'sesion',
+    src: '/images/nuevas/sesion-aire-colmena.png',
+    alt: 'Usuaria en sesión de Aire de Colmena',
+    caption: 'Sesión de respiración con Aire de Colmena',
+  },
+  {
+    id: 'apicultor',
+    src: '/images/nuevas/apicultor-beecura.png',
+    alt: 'Apicultor con equipo de protección Beecura',
+    caption: 'Cuidado de las colmenas y protocolo Beecura',
+  },
+  {
+    id: 'foto-2025',
+    src: '/images/nuevas/aire-de-colmena-beecura-tordesillas-2025.jpeg',
+    alt: 'Beecura de Aire de Colmena Tordesillas 2025',
+    caption: 'Beecura Tordesillas · Aire de Colmena',
   },
 ]

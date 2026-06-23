@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { whatsappUrl } from '../data/siteConfig'
 
 /** CTA de cierre de página — fondo naranja en todas las páginas */
 export default function PageCta({
@@ -10,7 +11,7 @@ export default function PageCta({
   whatsappMessage = 'Hola, me gustaría información sobre Beecura Aire de Colmena',
   showWhatsApp = true,
 }) {
-  const waUrl = `https://wa.me/525564452737?text=${encodeURIComponent(whatsappMessage)}`
+  const waUrl = whatsappUrl(whatsappMessage)
 
   const primaryClass =
     'inline-flex items-center justify-center gap-2 bg-white text-honey-700 font-bold px-8 py-3.5 rounded-full hover:bg-honey-50 transition-colors shadow-md text-base'

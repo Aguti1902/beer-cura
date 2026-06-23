@@ -6,7 +6,7 @@ const services = [
   'Beecura — Aire de Colmena',
   'Apiterapia / Apipuntura',
   'Control de Peso y Péptidos Bioactivos',
-  "Vegg's Valladolid (colaborador)",
+  'Dónde encontrarnos / puntos de venta',
   'Otro / Consulta general',
 ]
 

@@ -10,7 +10,9 @@ import VideoBaoan from '../components/VideoBaoan'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsApiterapia } from '../data/faqs'
-import { apiterapeuta } from '../data/siteConfig'
+import VideoSonodinamica from '../components/VideoSonodinamica'
+import BeecuraMark from '../components/BeecuraMark'
+import { apiterapeuta, alessioMunzi, whatsappUrl } from '../data/siteConfig'
 
 const products = [
   {
@@ -36,7 +38,7 @@ const products = [
   {
     emoji: '💧',
     name: 'Veneno de abeja (Apitoxina)',
-    desc: 'La apitoxina contiene péptidos y enzimas de interés científico. Su uso terapéutico requiere valoración estricta previa y supervisión profesional.',
+    desc: `La apitoxina contiene péptidos y enzimas de interés científico. En Tordesillas, ${apiterapeuta.name}; en Valladolid capital y provincia, ${alessioMunzi.name} (${alessioMunzi.role.toLowerCase()}) realiza las sesiones y atenciones a domicilio.`,
   },
   {
     emoji: '🕯️',
@@ -75,7 +77,7 @@ export default function Apiterapia() {
                 Solicitar valoración
               </Link>
               <a
-                href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20apiterapia"
+                href={whatsappUrl('Hola, quiero información sobre apiterapia')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp text-base px-8 py-4"
@@ -100,7 +102,7 @@ export default function Apiterapia() {
           </div>
           <div className="bg-honey-50 rounded-3xl p-8 border border-honey-200">
             <p className="text-gray-700 leading-relaxed text-center text-lg">
-              La apiterapia y la apipuntura en Beecura Tordesillas las imparte{' '}
+              La apiterapia y la apipuntura en <BeecuraMark className="font-semibold" /> Tordesillas las imparte{' '}
               <strong>{apiterapeuta.name}</strong>, {apiterapeuta.role.toLowerCase()}, con más de siete años de formación
               continua con docentes de referencia en España y China.
             </p>
@@ -155,8 +157,11 @@ export default function Apiterapia() {
                 con un enfoque similar al de la acupuntura tradicional china.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Requiere una valoración previa exhaustiva y se realiza bajo la supervisión de{' '}
-                <strong className="text-gray-800">{apiterapeuta.name}</strong>, con los protocolos de seguridad adecuados.
+                Requiere una valoración previa exhaustiva. En Tordesillas, bajo la supervisión de{' '}
+                <strong className="text-gray-800">{apiterapeuta.name}</strong>. En Valladolid capital y provincia,
+                las sesiones de apipuntura y apiterapia con veneno de abeja las realiza{' '}
+                <strong className="text-gray-800">{alessioMunzi.name}</strong>, {alessioMunzi.role.toLowerCase()},
+                con atención a domicilio.
               </p>
               <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 flex items-start gap-3">
                 <AlertTriangle size={18} className="text-amber-600 flex-shrink-0 mt-0.5" />
@@ -193,6 +198,10 @@ export default function Apiterapia() {
           </div>
         </div>
       </section>
+
+      <AlessioMunzi />
+
+      <VideoSonodinamica />
 
       <ApiterapeutaProfile />
 

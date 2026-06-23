@@ -8,7 +8,7 @@ import DrAcostaProgramDirector from '../components/DrAcostaProgramDirector'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsControlPeso } from '../data/faqs'
-import { drAcosta } from '../data/siteConfig'
+import { drAcosta, whatsappUrl } from '../data/siteConfig'
 
 const cortisolEffects = [
   { icon: Brain, label: 'Niebla mental y dificultad de concentración' },
@@ -88,7 +88,7 @@ export default function ControlPeso() {
                 Solicitar valoración
               </Link>
               <a
-                href="https://wa.me/525564452737?text=Hola,%20quiero%20información%20sobre%20control%20de%20peso%20con%20péptidos"
+                href={whatsappUrl('Hola, quiero información sobre control de peso con péptidos')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-whatsapp text-base px-8 py-4"

@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
-import { Phone, Mail, MapPin, Instagram, Facebook, Youtube } from 'lucide-react'
-import { site, apiterapeuta } from '../data/siteConfig'
+import { Phone, Mail, MapPin } from 'lucide-react'
+import BeecuraMark from '../components/BeecuraMark'
+import { contact, whatsappUrl, site, apiterapeuta } from '../data/siteConfig'
 
 const services = [
   { label: 'Aire de Colmena', href: '/aire-de-colmena' },
   { label: 'Apiterapia y Apipuntura', href: '/apiterapia' },
   { label: 'Control de Peso y Péptidos', href: '/control-de-peso' },
-  { label: "Vegg's Valladolid", href: '/veggs-valladolid' },
+  { label: 'Dónde encontrarnos', href: '/donde-encontrarnos' },
   { label: 'Beecura Europa', href: '/beecura-espana' },
 ]
 
@@ -25,7 +26,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 mb-4">
             <span className="text-2xl">🐝</span>
             <div>
-              <span className="font-bold text-white text-lg block leading-none">Beecura</span>
+              <BeecuraMark className="font-bold text-white text-lg leading-none" />
               <span className="text-xs text-honey-400 block">Tordesillas · Valladolid</span>
             </div>
           </div>
@@ -40,7 +41,7 @@ export default function Footer() {
               Reservar sesión
             </Link>
             <a
-              href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20sesión%20de%20aire%20de%20colmena"
+              href={whatsappUrl('Hola, me gustaría reservar una sesión de aire de colmena')}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center border border-gray-600 hover:border-green-500 hover:text-green-400 text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
@@ -83,17 +84,13 @@ export default function Footer() {
               <MapPin size={13} className="text-honey-500 flex-shrink-0 mt-0.5" />
               <span className="text-sm text-gray-400">{site.location}</span>
             </div>
-            <a href="tel:+525564452737" className="flex items-center gap-2 text-sm text-gray-400 hover:text-honey-400 transition-colors">
+            <a href={contact.phoneHref} className="flex items-center gap-2 text-sm text-gray-400 hover:text-honey-400 transition-colors">
               <Phone size={13} className="text-honey-500" />
-              +52 55 6445 2737
+              {contact.phone}
             </a>
-            <a href="tel:+525547325430" className="flex items-center gap-2 text-sm text-gray-400 hover:text-honey-400 transition-colors">
-              <Phone size={13} className="text-honey-500" />
-              +52 55 4732 5430
-            </a>
-            <a href="mailto:bermato2004@yahoo.com" className="flex items-center gap-2 text-sm text-gray-400 hover:text-honey-400 transition-colors">
+            <a href={`mailto:${contact.email}`} className="flex items-center gap-2 text-sm text-gray-400 hover:text-honey-400 transition-colors">
               <Mail size={13} className="text-honey-500" />
-              bermato2004@yahoo.com
+              {contact.email}
             </a>
           </div>
         </div>

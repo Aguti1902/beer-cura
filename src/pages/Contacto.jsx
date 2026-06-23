@@ -3,33 +3,28 @@ import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react'
 import SectionTitle from '../components/SectionTitle'
 import ContactForm from '../components/ContactForm'
+import BeecuraMark from '../components/BeecuraMark'
+import { contact, site, whatsappUrl } from '../data/siteConfig'
 
 const contactData = [
   {
     icon: Phone,
-    label: 'Teléfono 1',
-    value: '+52 55 6445 2737',
-    href: 'tel:+525564452737',
-    color: 'bg-honey-100 text-honey-700',
-  },
-  {
-    icon: Phone,
-    label: 'Teléfono 2',
-    value: '+52 55 4732 5430',
-    href: 'tel:+525547325430',
+    label: 'WhatsApp / Teléfono',
+    value: contact.phone,
+    href: contact.phoneHref,
     color: 'bg-honey-100 text-honey-700',
   },
   {
     icon: Mail,
     label: 'Email',
-    value: 'bermato2004@yahoo.com',
-    href: 'mailto:bermato2004@yahoo.com',
+    value: contact.email,
+    href: `mailto:${contact.email}`,
     color: 'bg-olive-100 text-olive-700',
   },
   {
     icon: MapPin,
     label: 'Ubicación',
-    value: 'Tordesillas, Valladolid, España',
+    value: site.location,
     href: 'https://maps.google.com/?q=Tordesillas,Valladolid',
     color: 'bg-amber-100 text-amber-700',
   },
@@ -44,7 +39,6 @@ export default function Contacto() {
         <meta name="keywords" content="contacto Beecura Tordesillas, reservar consulta terapia natural, cita apiterapia Valladolid" />
       </Helmet>
 
-      {/* HERO */}
       <section className="relative py-24 bg-gradient-to-br from-honey-50 to-warm-50 overflow-hidden">
         <div className="absolute inset-0 bg-honeycomb opacity-30 pointer-events-none" />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center relative">
@@ -54,7 +48,7 @@ export default function Contacto() {
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-5">
               Contacta con{' '}
-              <span className="text-gradient">Beecura Tordesillas</span>
+              <BeecuraMark className="text-gradient font-bold"> Tordesillas</BeecuraMark>
             </h1>
             <p className="text-xl text-gray-600">
               Reserva tu consulta, pide información o simplemente cuéntanos qué necesitas.
@@ -64,11 +58,9 @@ export default function Contacto() {
         </div>
       </section>
 
-      {/* CONTENIDO */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-16">
-            {/* FORMULARIO */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -85,7 +77,6 @@ export default function Contacto() {
               </div>
             </motion.div>
 
-            {/* DATOS + MAPA */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -119,7 +110,6 @@ export default function Contacto() {
                 </div>
               </div>
 
-              {/* WhatsApp destacado */}
               <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-6 border border-green-200">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center">
@@ -127,14 +117,14 @@ export default function Contacto() {
                   </div>
                   <div>
                     <p className="font-bold text-gray-800">WhatsApp directo</p>
-                    <p className="text-sm text-gray-500">Respuesta rápida</p>
+                    <p className="text-sm text-gray-500">{contact.whatsappDisplay}</p>
                   </div>
                 </div>
                 <p className="text-sm text-gray-600 mb-4">
                   La forma más rápida de contactar. Escríbenos en cualquier momento y te responderemos a la brevedad.
                 </p>
                 <a
-                  href="https://wa.me/525564452737?text=Hola,%20me%20gustaría%20reservar%20una%20consulta%20en%20Beecura%20Tordesillas"
+                  href={whatsappUrl('Hola, me gustaría reservar una consulta en Beecura Tordesillas')}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-whatsapp w-full justify-center"
@@ -143,25 +133,19 @@ export default function Contacto() {
                 </a>
               </div>
 
-              {/* Mapa placeholder */}
               <div className="bg-warm-50 rounded-3xl border border-warm-200 overflow-hidden">
                 <div className="p-6 pb-0">
                   <p className="font-bold text-gray-800 mb-1">Tordesillas, Valladolid</p>
                   <p className="text-sm text-gray-500">España</p>
                 </div>
-                <div className="h-48 bg-gradient-to-br from-honey-100 to-warm-100 flex items-center justify-center m-4 rounded-2xl border border-honey-200">
-                  <div className="text-center">
-                    <div className="text-5xl mb-2">📍</div>
-                    <p className="text-sm text-gray-500 font-medium">Tordesillas, Valladolid</p>
-                    <a
-                      href="https://maps.google.com/?q=Tordesillas,+Valladolid,+Spain"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-xs text-honey-600 hover:underline mt-1 block"
-                    >
-                      Abrir en Google Maps →
-                    </a>
-                  </div>
+                <div className="h-48 m-4 rounded-2xl border border-honey-200 overflow-hidden">
+                  <iframe
+                    title="Mapa Beecura Tordesillas"
+                    src="https://www.google.com/maps?q=Tordesillas+Valladolid+Beecura&output=embed"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    allowFullScreen
+                  />
                 </div>
               </div>
             </motion.div>
