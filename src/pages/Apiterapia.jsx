@@ -11,7 +11,6 @@ import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsApiterapia } from '../data/faqs'
 import FeaturePhoto from '../components/FeaturePhoto'
-import VideoSonodinamica from '../components/VideoSonodinamica'
 import AlessioMunzi from '../components/AlessioMunzi'
 import BeecuraMark from '../components/BeecuraMark'
 import { apiterapeuta, alessioMunzi, whatsappUrl } from '../data/siteConfig'
@@ -203,8 +202,6 @@ export default function Apiterapia() {
       </section>
 
       <AlessioMunzi />
-
-      <VideoSonodinamica />
 
       <ApiterapeutaProfile />
 

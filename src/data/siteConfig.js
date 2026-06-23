@@ -58,15 +58,6 @@ export const dolenciasAdC = {
   ],
 }
 
-export const videoSonodinamica = {
-  vimeoId: '1163047347',
-  vimeoUrl: 'https://vimeo.com/1163047347?fl=pl&fe=sh',
-  eyebrow: 'Terapia complementaria',
-  title: 'Apiterapia y terapia Sonodinámica para el tratamiento de tumores cerebrales',
-  subtitle:
-    'Terapia alternativa complementaria con veneno de abeja y sonoterapia. Vídeo informativo sobre el abordaje con apitoxina y sonodinámica.',
-}
-
 export const sampleReviews = {
   rating: 5.0,
   total: 26,
