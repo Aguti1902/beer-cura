@@ -10,6 +10,7 @@ import VideoBaoan from '../components/VideoBaoan'
 import FAQ from '../components/FAQ'
 import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsApiterapia } from '../data/faqs'
+import FeaturePhoto from '../components/FeaturePhoto'
 import VideoSonodinamica from '../components/VideoSonodinamica'
 import AlessioMunzi from '../components/AlessioMunzi'
 import BeecuraMark from '../components/BeecuraMark'
@@ -177,11 +178,12 @@ export default function Apiterapia() {
             </div>
 
             <div className="flex flex-col gap-4">
-              <div className="bg-gradient-to-br from-honey-100 to-amber-50 rounded-3xl p-8 text-center border border-honey-200">
-                <div className="text-6xl mb-4">💉</div>
-                <h3 className="font-bold text-xl text-gray-800 mb-2">Apipuntura</h3>
-                <p className="text-sm text-gray-600">Protocolo controlado · Valoración previa · Supervisión continua</p>
-              </div>
+              <FeaturePhoto
+                src="/images/ramon-dr-wan-bin-apipuntura.jpeg"
+                alt="Ramón Regalado Rico con el Dr. Wan Bin — apipuntura con veneno de abeja"
+                badge="Apipuntura · Protocolo controlado"
+                aspect="aspect-[4/5]"
+              />
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { check: 'Valoración previa obligatoria' },

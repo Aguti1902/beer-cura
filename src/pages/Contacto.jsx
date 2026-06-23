@@ -48,7 +48,8 @@ export default function Contacto() {
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-5">
               Contacta con{' '}
-              <BeecuraMark className="text-gradient font-bold"> Tordesillas</BeecuraMark>
+              <span className="text-gradient"><BeecuraMark /></span>
+              {' '}Tordesillas
             </h1>
             <p className="text-xl text-gray-600">
               Reserva tu consulta, pide información o simplemente cuéntanos qué necesitas.

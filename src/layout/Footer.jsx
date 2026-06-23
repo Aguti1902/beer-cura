@@ -26,7 +26,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 mb-4">
             <span className="text-2xl">🐝</span>
             <div>
-              <BeecuraMark className="font-bold text-white text-lg leading-none" />
+              <BeecuraMark className="font-bold text-white text-lg leading-none" nowrap />
               <span className="text-xs text-honey-400 block">Tordesillas · Valladolid</span>
             </div>
           </div>

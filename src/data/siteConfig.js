@@ -26,6 +26,49 @@ export const videoSonodinamica = {
     'Terapia alternativa complementaria con veneno de abeja y sonoterapia. Vídeo informativo sobre el abordaje con apitoxina y sonodinámica.',
 }
 
+export const sampleReviews = {
+  rating: 5.0,
+  total: 26,
+  items: [
+    {
+      author: 'Carmen R.',
+      rating: 5,
+      text: 'Una experiencia maravillosa. Después de varias sesiones de Aire de Colmena noto mucha mejoría en mi respiración y en el estado de ánimo.',
+      date: 'hace 3 meses',
+    },
+    {
+      author: 'José M.',
+      rating: 5,
+      text: 'Ramón es un profesional excelente. El ambiente de la cabana es único y muy relajante. Totalmente recomendable para alergias respiratorias.',
+      date: 'hace 5 meses',
+    },
+    {
+      author: 'Laura P.',
+      rating: 5,
+      text: 'Llevaba años con rinitis y el Aire de Colmena me ha ayudado muchísimo. Un complemento natural que de verdad funciona.',
+      date: 'hace 2 meses',
+    },
+    {
+      author: 'Antonio V.',
+      rating: 5,
+      text: 'Muy contento con la apiterapia y la atención recibida. Instalaciones impecables y trato cercano en Tordesillas.',
+      date: 'hace 1 mes',
+    },
+    {
+      author: 'Isabel T.',
+      rating: 5,
+      text: 'Mi padre con EPOC ha mejorado su calidad de vida con las sesiones guiadas. Gracias por vuestro trabajo.',
+      date: 'hace 4 meses',
+    },
+    {
+      author: 'Marta S.',
+      rating: 5,
+      text: 'Terapia diferente y muy efectiva para el estrés y el insomnio. Sin duda volveré.',
+      date: 'hace 6 meses',
+    },
+  ],
+}
+
 export const contact = {
   email: 'ramon@apipuntura-tordesillas.com',
   whatsapp: '34609426793',

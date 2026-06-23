@@ -11,6 +11,7 @@ import LegalDisclaimer from '../components/LegalDisclaimer'
 import { faqsAireColmena } from '../data/faqs'
 import DolenciasAdC from '../components/DolenciasAdC'
 import BeecuraMark from '../components/BeecuraMark'
+import FeaturePhoto from '../components/FeaturePhoto'
 import GaleriaBeecura from '../components/GaleriaBeecura'
 import YouTubeSection from '../components/YouTubeSection'
 import { apiterapeuta, whatsappUrl } from '../data/siteConfig'
@@ -94,23 +95,13 @@ export default function AireColmena() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-honey-100 to-amber-50 rounded-3xl flex items-center justify-center border border-honey-200 shadow-lg">
-                <div className="text-center p-10">
-                  <div className="text-9xl animate-float">🍯</div>
-                  <div className="mt-6 flex flex-wrap gap-2 justify-center">
-                    {['Propóleo', 'Miel', 'Enzimas', 'Cera', 'Polen', 'Agua'].map(p => (
-                      <span key={p} className="bg-white/90 text-xs font-medium text-gray-700 px-3 py-1 rounded-full border border-honey-100 shadow-sm">
-                        {p}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-honey-600 text-white text-sm font-bold px-5 py-2.5 rounded-2xl shadow-lg">
-                🐝 Dispositivo Medical
-              </div>
+              <FeaturePhoto
+                src="/images/nuevas/sesion-aire-colmena.png"
+                alt="Sesión de terapia con Aire de Colmena Beecura"
+                badge="Dispositivo Medical Beecura®"
+                aspect="aspect-square"
+              />
             </motion.div>
 
             <div>

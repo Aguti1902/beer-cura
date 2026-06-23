@@ -10,7 +10,7 @@ export default function Opiniones() {
         <title>Opiniones en Google Maps · Beecura Tordesillas</title>
         <meta
           name="description"
-          content="Reseñas reales de usuarios de Beecura Tordesillas en Google Maps. Terapia con aire de colmena y apiterapia en Valladolid."
+          content="Reseñas de usuarios de Beecura Tordesillas en Google Maps. Terapia con aire de colmena y apiterapia en Valladolid."
         />
       </Helmet>
 
@@ -24,11 +24,8 @@ export default function Opiniones() {
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-5">
               Reseñas de nuestros usuarios
             </h1>
-            <p className="text-xl text-gray-600 mb-4">
-              Las opiniones que importan son las publicadas por personas reales en Google Maps.
-            </p>
-            <p className="text-sm text-gray-500">
-              Consulta, comparte y deja tu experiencia con Beecura de Aire de Colmena.
+            <p className="text-xl text-gray-600">
+              Opiniones de personas que han probado Beecura de Aire de Colmena en Tordesillas.
             </p>
           </motion.div>
         </div>
@@ -43,12 +40,11 @@ export default function Opiniones() {
       <section className="py-12 bg-warm-50">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 text-center">
           <p className="text-xs text-gray-400 italic leading-relaxed">
-            Las reseñas mostradas proceden de Google Maps cuando la integración está configurada.
-            En cualquier caso, puedes ver todas las opiniones verificadas en{' '}
+            También puedes dejar tu opinión en{' '}
             <a href={google.reviewsUrl} target="_blank" rel="noopener noreferrer" className="text-honey-600 underline">
               Google Maps
             </a>
-            . Los resultados individuales pueden variar. Las terapias no sustituyen el tratamiento médico convencional.
+            . Las terapias no sustituyen el tratamiento médico convencional.
           </p>
         </div>
       </section>

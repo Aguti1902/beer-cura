@@ -50,7 +50,7 @@ export default function Header() {
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <span className="text-2xl">🐝</span>
             <div>
-              <BeecuraMark className="font-bold text-gray-800 text-base md:text-lg leading-none" />
+              <BeecuraMark className="font-bold text-gray-800 text-base md:text-lg leading-none" nowrap />
               <span className="text-xs text-honey-600 leading-none block font-medium">Tordesillas</span>
             </div>
           </Link>

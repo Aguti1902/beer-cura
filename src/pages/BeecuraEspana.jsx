@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import SectionTitle from '../components/SectionTitle'
 import PageCta from '../components/PageCta'
 import LocationCard from '../components/LocationCard'
+import FeaturePhoto from '../components/FeaturePhoto'
 import EuropeStationsMap from '../components/EuropeStationsMap'
 import { beecuraCenters } from '../data/services'
 
@@ -60,21 +61,23 @@ export default function BeecuraEspana() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-gradient-to-br from-honey-100 to-amber-50 rounded-3xl p-8 text-center border border-honey-200"
             >
-              <div className="text-7xl mb-4 animate-float">🇪🇸</div>
-              <p className="font-bold text-2xl text-gray-800 mb-2">Red Beecura</p>
-              <p className="text-gray-500 text-sm mb-6">Centros en España</p>
-              <div className="grid grid-cols-3 gap-3 text-sm">
-                <div className="bg-white rounded-xl p-3 border border-honey-100">
+              <FeaturePhoto
+                src="/images/nuevas/cabana-campo-tordesillas.png"
+                alt="Cabana Beecura de Aire de Colmena en Tordesillas"
+                badge="Red Beecura · España"
+                aspect="aspect-[4/5]"
+              />
+              <div className="mt-4 grid grid-cols-3 gap-3 text-sm">
+                <div className="bg-white rounded-xl p-3 border border-honey-100 text-center shadow-sm">
                   <p className="font-bold text-honey-700 text-xl">3</p>
                   <p className="text-gray-500 text-xs">Centros</p>
                 </div>
-                <div className="bg-white rounded-xl p-3 border border-honey-100">
+                <div className="bg-white rounded-xl p-3 border border-honey-100 text-center shadow-sm">
                   <p className="font-bold text-honey-700 text-xl">3</p>
                   <p className="text-gray-500 text-xs">Provincias</p>
                 </div>
-                <div className="bg-white rounded-xl p-3 border border-honey-100">
+                <div className="bg-white rounded-xl p-3 border border-honey-100 text-center shadow-sm">
                   <p className="font-bold text-honey-700 text-xl">1</p>
                   <p className="text-gray-500 text-xs">Protocolo</p>
                 </div>

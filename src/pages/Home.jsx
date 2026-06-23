@@ -14,21 +14,15 @@ import GaleriaBeecura from '../components/GaleriaBeecura'
 import YouTubeSection from '../components/YouTubeSection'
 import BeecuraMark from '../components/BeecuraMark'
 import DolenciasAdC from '../components/DolenciasAdC'
+import FeaturePhoto from '../components/FeaturePhoto'
 import { services } from '../data/services'
-import { site, apiterapeuta, heroImage } from '../data/siteConfig'
+import { site, heroImage } from '../data/siteConfig'
 
 const benefits = [
   { icon: Wind, title: 'Medicina de la respiración', desc: 'Técnicas largas y lentas, abiertas a todo el mundo, potenciadas con el Aire de Colmena.' },
   { icon: Heart, title: 'Beecura de Aire de Colmena', desc: 'Api-terapia natural respirando el microambiente enriquecido: propóleo, miel y compuestos bioactivos.' },
   { icon: Leaf, title: 'Apiterapia y apipuntura', desc: 'Productos de la colmena y técnicas avanzadas con formación internacional de referencia.' },
   { icon: CheckCircle, title: 'Red Beecura Europa', desc: 'Estaciones en Alemania, Austria y España con el mismo sistema y protocolo de calidad.' },
-]
-
-const stats = [
-  { value: '★', label: 'Terapia principal' },
-  { value: 'AdC', label: 'Aire de Colmena' },
-  { value: 'EU', label: 'Red europea Beecura' },
-  { value: '100%', label: 'Sesiones guiadas' },
 ]
 
 export default function Home() {
@@ -67,8 +61,9 @@ export default function Home() {
               🐝 {site.tagline}
             </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 leading-tight mb-6">
-              <BeecuraMark className="text-gradient font-bold" as="span"> de Aire de Colmena</BeecuraMark>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.25rem] xl:text-6xl font-bold text-gray-800 leading-tight mb-6">
+              <span className="text-gradient"><BeecuraMark /></span>
+              {' '}de Aire de Colmena
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed mb-8 max-w-xl">
@@ -107,42 +102,13 @@ export default function Home() {
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:flex flex-col gap-4"
+            className="hidden lg:block"
           >
-            <div className="bg-white/80 backdrop-blur rounded-3xl border border-honey-100 shadow-xl overflow-hidden">
-              <div className="aspect-[4/3] overflow-hidden">
-                <img
-                  src={heroImage.src}
-                  alt={heroImage.alt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 flex flex-col gap-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-honey-100 rounded-2xl flex items-center justify-center text-2xl">🍯</div>
-                  <div>
-                    <p className="font-bold text-gray-800">Aire de Colmena</p>
-                    <p className="text-sm text-gray-500">Cabana Beecura · Tordesillas</p>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-3">
-                  {['🫁 Medicina respiración', '🐝 Apiterapia', '🌿 Control de peso', '📍 Dónde encontrarnos'].map(item => (
-                    <div key={item} className="bg-warm-50 rounded-xl p-3 text-sm font-medium text-gray-700">
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map(s => (
-                <div key={s.label} className="bg-white/80 backdrop-blur rounded-2xl border border-warm-100 shadow-sm p-5 text-center">
-                  <p className="text-3xl font-bold text-honey-600">{s.value}</p>
-                  <p className="text-xs text-gray-500 mt-1">{s.label}</p>
-                </div>
-              ))}
-            </div>
+            <img
+              src={heroImage.src}
+              alt={heroImage.alt}
+              className="w-full rounded-3xl shadow-2xl border border-honey-200 object-cover aspect-[4/5]"
+            />
           </motion.div>
         </div>
       </section>
@@ -190,20 +156,13 @@ export default function Home() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
             >
-              <div className="aspect-square bg-gradient-to-br from-honey-100 to-amber-50 rounded-3xl flex items-center justify-center border border-honey-200 shadow-lg overflow-hidden">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4 animate-float">🐝</div>
-                  <p className="font-bold text-2xl text-gray-800 mb-2">Dispositivo <BeecuraMark /></p>
-                  <p className="text-gray-500 text-sm">Microambiente de colmena controlado</p>
-                  <div className="mt-6 grid grid-cols-3 gap-3 text-xs">
-                    {['Propóleo', 'Miel', 'Cera', 'Enzimas', 'Polen', 'Compuestos'].map(p => (
-                      <span key={p} className="bg-white/80 rounded-lg px-2 py-1.5 font-medium text-gray-700 border border-honey-100">{p}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              <FeaturePhoto
+                src="/images/nuevas/cabana-interior-colmena.png"
+                alt="Interior de la cabana Beecura con colmenas y sillones de terapia"
+                badge="Dispositivo Medical Beecura®"
+                aspect="aspect-[4/5]"
+              />
             </motion.div>
           </div>
         </div>
@@ -270,11 +229,6 @@ export default function Home() {
       <section className="py-24 bg-warm-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <GoogleReviewsSection />
-          <div className="mt-10 text-center">
-            <Link to="/opiniones" className="btn-secondary">
-              Página de opiniones
-            </Link>
-          </div>
         </div>
       </section>
 

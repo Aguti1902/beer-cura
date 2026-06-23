@@ -14,7 +14,7 @@ export default function SectionTitle({ eyebrow, title, subtitle, centered = fals
           {eyebrow}
         </span>
       )}
-      <h2 className={`section-title ${light ? 'text-white' : 'text-gray-800'}`}>
+      <h2 className={`section-title ${light ? 'text-white' : 'text-gray-800'} ${centered ? 'mx-auto' : ''}`}>
         {title}
       </h2>
       {subtitle && (
