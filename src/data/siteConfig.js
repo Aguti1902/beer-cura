@@ -7,15 +7,56 @@ export const site = {
   location: 'Tordesillas, Valladolid, España',
 }
 
-export const dolenciasAdC = [
-  { id: 'alergias', emphasis: 'ALERGIAS', rest: ' respiratorias' },
-  { id: 'asma', label: 'ASMA' },
-  { id: 'pulmonares', emphasis: 'Enfermedades', rest: ' PULMONARES' },
-  { id: 'epoc', label: 'EPOC' },
-  { id: 'estres', label: 'ESTRÉS' },
-  { id: 'insomnio', label: 'INSOMNIO' },
-  { id: 'rinitis', label: 'RINITIS' },
-]
+export const dolenciasAdC = {
+  intro:
+    'El Aire de Colmena enriquece la respiración con propóleo, miel y compuestos bioactivos. Terapia complementaria muy valorada en:',
+  items: [
+    {
+      id: 'alergias',
+      line1: 'ALERGIAS',
+      line2: 'respiratorias',
+      icon: 'wind',
+      hint: 'Polen, ácaros y entornos sensibles',
+    },
+    {
+      id: 'asma',
+      line1: 'ASMA',
+      icon: 'activity',
+      hint: 'Bienestar de las vías respiratorias',
+    },
+    {
+      id: 'pulmonares',
+      line1: 'Enfermedades',
+      line2: 'PULMONARES',
+      icon: 'heart-pulse',
+      hint: 'Apoyo respiratorio complementario',
+    },
+    {
+      id: 'epoc',
+      line1: 'EPOC',
+      icon: 'lungs',
+      hint: 'Calidad de vida respiratoria',
+    },
+    {
+      id: 'estres',
+      line1: 'ESTRÉS',
+      icon: 'brain',
+      hint: 'Relajación profunda y equilibrio',
+    },
+    {
+      id: 'insomnio',
+      line1: 'INSOMNIO',
+      icon: 'moon',
+      hint: 'Descanso y respiración reparadora',
+    },
+    {
+      id: 'rinitis',
+      line1: 'RINITIS',
+      icon: 'droplets',
+      hint: 'Congestión nasal y molestias estacionales',
+    },
+  ],
+}
 
 export const videoSonodinamica = {
   vimeoId: '1163047347',
