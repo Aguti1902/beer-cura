@@ -12,7 +12,7 @@ export default function BeecuraEspana() {
     <>
       <Helmet>
         <title>Beecura en España · Red de Centros de Terapia con Aire de Colmena</title>
-        <meta name="description" content="Red de centros Beecura en España: Tordesillas (Valladolid), Asturias y Valdemanco (Madrid). Terapia respiratoria con aire de colmena." />
+        <meta name="description" content="Red de centros Beecura en España: Castilla y León, Asturies y Madrid. Terapia respiratoria con aire de colmena." />
         <meta name="keywords" content="Beecura España, centros Beecura, aire de colmena España, apiterapia España, terapia natural red nacional" />
       </Helmet>
 
@@ -75,7 +75,7 @@ export default function BeecuraEspana() {
                 </div>
                 <div className="bg-white rounded-xl p-3 border border-honey-100 text-center shadow-sm">
                   <p className="font-bold text-honey-700 text-xl">3</p>
-                  <p className="text-gray-500 text-xs">Provincias</p>
+                  <p className="text-gray-500 text-xs">Comunidades</p>
                 </div>
                 <div className="bg-white rounded-xl p-3 border border-honey-100 text-center shadow-sm">
                   <p className="font-bold text-honey-700 text-xl">1</p>
@@ -93,7 +93,7 @@ export default function BeecuraEspana() {
           <SectionTitle
             eyebrow="Localización"
             title="Centros Beecura en España"
-            subtitle="Encuentra tu centro Beecura más cercano y reserva tu sesión."
+            subtitle="Encuentra tu centro Beecura más cercano. Datos de contacto según el mapa oficial de estaciones Beecura en Europa."
             centered
           />
           <div className="mt-14 grid md:grid-cols-3 gap-6">

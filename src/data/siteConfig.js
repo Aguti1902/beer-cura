@@ -230,6 +230,11 @@ export const medicinaRespiracion = {
     title: 'Eje respiración / cerebro',
     caption: 'La medicina de la Respiración (audio)',
   },
+  video: {
+    src: '/videos/medicina-respiracion-arte-europa.mp4',
+    title: 'Medicina de la Respiración - Aire canal TV ARTE Europa',
+    caption: 'Reportaje ilustrativo sobre la medicina de la respiración y el Aire de Colmena.',
+  },
   image: {
     src: '/images/nuevas/sesion-aire-colmena.png',
     alt: 'Sesión de terapia con Aire de Colmena Beecura',

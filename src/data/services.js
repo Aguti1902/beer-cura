@@ -1,5 +1,3 @@
-import { contact } from '../data/siteConfig'
-
 export const services = [
   {
     id: 'aire-colmena',
@@ -44,25 +42,41 @@ export const beecuraCenters = [
   {
     id: 'tordesillas',
     name: 'Beecura Tordesillas',
+    community: 'Castilla y León',
     location: 'Tordesillas, Valladolid',
+    address: 'Muedra, 47100 Tordesillas, Valladolid',
     description:
       'Centro de referencia en Castilla y León. Actividad principal: Beecura de Aire de Colmena, apiterapia y medicina de la respiración.',
-    phone: [contact.phone],
-    email: contact.email,
+    phone: ['+34 609 426 793'],
+    email: 'beecurator@gmail.com',
+    website: 'https://www.beecura-tordesillas.com',
+    mapsUrl: 'https://maps.google.com/?q=Muedra+47100+Tordesillas+Valladolid+Beecura',
     featured: true,
   },
   {
     id: 'asturias',
-    name: 'Beecura Aires del Truébanu',
-    location: 'Asturias',
-    description: 'Centro Beecura en Asturias con terapia de aire de colmena en entorno natural.',
+    name: "L'aire del Truébanu",
+    community: 'Asturies',
+    location: 'Riosa, Asturias',
+    address: 'Panderraíces 4, 33160 Riosa, Asturias',
+    description: 'Estación Beecura en Asturias con terapia de aire de colmena en entorno natural del Truébanu.',
+    phone: ['680 480 951', '620 528 514'],
+    contactPerson: 'Jesús / Melissa',
+    instagram: 'https://www.instagram.com/melissae.riosa',
+    facebook: 'https://www.facebook.com/MelissaeRiosa',
+    mapsUrl: 'https://maps.google.com/?q=Panderraíces+4+33160+Riosa+Asturias',
     featured: false,
   },
   {
     id: 'madrid',
-    name: 'Beecura Taller de las Tradiciones',
+    name: 'Aire de Abejas · Beecura',
+    community: 'Madrid',
     location: 'Valdemanco, Madrid',
-    description: 'Espacio Beecura en la sierra de Madrid dedicado al Aire de Colmena.',
+    address: 'Valdemanco, Madrid',
+    description: 'Estación Beecura en la Comunidad de Madrid dedicada al Aire de Colmena.',
+    phone: ['653 558 301'],
+    contactPerson: 'Juan Rodríguez',
+    mapsUrl: 'https://maps.google.com/?q=Valdemanco+Madrid+Beecura',
     featured: false,
   },
 ]

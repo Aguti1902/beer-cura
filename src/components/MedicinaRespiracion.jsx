@@ -2,12 +2,13 @@ import { motion } from 'framer-motion'
 import { Wind } from 'lucide-react'
 import SectionTitle from './SectionTitle'
 import LocalAudio from './LocalAudio'
+import LocalVideo from './LocalVideo'
 import LegalDisclaimer from './LegalDisclaimer'
 import { medicinaRespiracion } from '../data/siteConfig'
 
 /** @param {'audio' | 'image'} media — audio en Aire de Colmena; imagen en inicio */
 export default function MedicinaRespiracion({ media = 'audio', className = '' }) {
-  const { title, subtitle, paragraphs, audio, image } = medicinaRespiracion
+  const { title, subtitle, paragraphs, audio, video, image } = medicinaRespiracion
 
   return (
     <section className={`py-20 bg-gradient-to-b from-warm-50 to-white ${className}`}>
@@ -72,6 +73,16 @@ export default function MedicinaRespiracion({ media = 'audio', className = '' })
             </motion.figure>
           )}
         </div>
+
+        {video?.src && (
+          <div className="mt-16">
+            <LocalVideo
+              src={video.src}
+              title={video.title}
+              caption={video.caption}
+            />
+          </div>
+        )}
       </div>
     </section>
   )
